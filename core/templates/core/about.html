@@ -1,0 +1,260 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}About - GeoWetlands Mauritania{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="detail-header">
+    <div class="container">
+        <h1 class="detail-title" data-aos="fade-up">About GeoWetlands Mauritania</h1>
+        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">Protecting and preserving Mauritania's valuable wetland ecosystems</p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="container section-padding">
+    <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <img src="{% static 'core/images/about-img.jpg' %}" alt="Mauritanian Wetlands" class="img-fluid rounded shadow-lg" onerror="this.src='https://via.placeholder.com/600x400?text=Mauritanian+Wetlands'">
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+            <h2>Our Mission</h2>
+            <p class="lead">GeoWetlands Mauritania is dedicated to the conservation, sustainable management, and scientific understanding of Mauritania's wetland ecosystems.</p>
+            <p>Through comprehensive data collection, monitoring, and stakeholder engagement, we aim to protect these vital habitats for future generations while supporting sustainable development and climate resilience.</p>
+            <p>Our platform serves as a centralized repository of information on wetland sites, biodiversity, threats, and conservation measures, enabling informed decision-making and collaborative action.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Key Features Section -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Key Features</h2>
+            <p>Discover the tools and resources available on our platform</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="feature-title">Comprehensive Database</h3>
+                    <p>Access detailed information on wetland sites, species inventories, threats, and conservation measures across Mauritania.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Interactive Mapping</h3>
+                    <p>Visualize wetland sites geographically with our interactive mapping system, enabling spatial analysis and planning.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Monitoring & Reporting</h3>
+                    <p>Track changes in wetland conditions, biodiversity, and conservation status over time with our monitoring tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Team</h2>
+            <p>Meet the experts behind GeoWetlands Mauritania</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card text-center h-100">
+                    <div class="card-img-top pt-3">
+                        <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center bg-light" style="width: 150px; height: 150px;">
+                            <i class="fas fa-user fa-4x text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. Aminata Diallo</h5>
+                        <p class="text-muted">Project Director</p>
+                        <p class="card-text">Wetland ecologist with 15 years of experience in West African ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card text-center h-100">
+                    <div class="card-img-top pt-3">
+                        <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center bg-light" style="width: 150px; height: 150px;">
+                            <i class="fas fa-user fa-4x text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mohamed Ould Cheikh</h5>
+                        <p class="text-muted">GIS Specialist</p>
+                        <p class="card-text">Expert in spatial analysis and geographic information systems for conservation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card text-center h-100">
+                    <div class="card-img-top pt-3">
+                        <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center bg-light" style="width: 150px; height: 150px;">
+                            <i class="fas fa-user fa-4x text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. Sophie Martin</h5>
+                        <p class="text-muted">Biodiversity Coordinator</p>
+                        <p class="card-text">Specializes in avian ecology and wetland biodiversity assessment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="card text-center h-100">
+                    <div class="card-img-top pt-3">
+                        <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center bg-light" style="width: 150px; height: 150px;">
+                            <i class="fas fa-user fa-4x text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Ahmed Baba</h5>
+                        <p class="text-muted">Community Engagement Officer</p>
+                        <p class="card-text">Works with local communities to promote sustainable wetland management practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partners Section -->
+<section class="section-padding bg-light">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Partners</h2>
+            <p>Collaborating for wetland conservation in Mauritania</p>
+        </div>
+        
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-3 col-6 mb-4 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <div style="height: 100px;" class="d-flex align-items-center justify-content-center">
+                        <span class="h4 fw-bold text-primary">Ministry of Environment</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 col-6 mb-4 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <div style="height: 100px;" class="d-flex align-items-center justify-content-center">
+                        <span class="h4 fw-bold text-primary">Ramsar Convention</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 col-6 mb-4 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <div style="height: 100px;" class="d-flex align-items-center justify-content-center">
+                        <span class="h4 fw-bold text-primary">University of Nouakchott</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 col-6 mb-4 text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white p-4 rounded shadow-sm">
+                    <div style="height: 100px;" class="d-flex align-items-center justify-content-center">
+                        <span class="h4 fw-bold text-primary">IUCN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <p>Get in touch with the GeoWetlands Mauritania team</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="mb-4">Send us a message</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Enter subject">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <ul class="contact-info">
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                                <span>123 Environmental Center, Nouakchott, Mauritania</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-phone me-2 text-primary"></i>
+                                <span>+222 XX XX XX XX</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-envelope me-2 text-primary"></i>
+                                <span>info@geowetlands-mauritania.org</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-clock me-2 text-primary"></i>
+                                <span>Monday - Friday: 8:00 AM - 5:00 PM</span>
+                            </li>
+                        </ul>
+                        
+                        <h4 class="mt-4 mb-3">Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon me-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon me-2"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

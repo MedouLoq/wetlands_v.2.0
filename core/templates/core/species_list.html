@@ -1,0 +1,189 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Species Database - GeoWetlands Mauritania{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="detail-header">
+    <div class="container">
+        <h1 class="detail-title" data-aos="fade-up">Species Database</h1>
+        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">Explore the biodiversity of Mauritanian wetlands</p>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="container mb-5">
+    <div class="filter-section" data-aos="fade-up">
+        <form id="filter-form" method="get" class="row g-3 align-items-end">
+            <div class="col-md-4">
+                <label for="group" class="form-label">Filter by Taxonomic Group</label>
+                <select name="group" id="group" class="form-select">
+                    <option value="">All Groups</option>
+                    {% for group in groups %}
+                        <option value="{{ group.name }}" {% if selected_group == group.name %}selected{% endif %}>{{ group.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="search" class="form-label">Search</label>
+                <div class="input-group">
+                    <input type="text" name="q" id="search" class="form-control" placeholder="Search by name..." value="{{ search_query }}">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'species_list' %}" class="btn btn-outline-secondary w-100">
+                    <i class="fas fa-redo"></i> Reset
+                </a>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Species Grid -->
+<section class="container mb-5">
+    <div class="row">
+        {% for species in page_obj %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:100 }}">
+                <div class="species-card">
+                    <div class="species-img">
+                        {% if species.image %}
+                            <img src="{{ species.image.url }}" alt="{{ species.scientific_name }}" class="img-fluid">
+                        {% else %}
+                            {% if species.taxonomic_group.name == 'Bird' %}
+                                <i class="fas fa-dove"></i>
+                            {% elif species.taxonomic_group.name == 'Fish' %}
+                                <i class="fas fa-fish"></i>
+                            {% elif species.taxonomic_group.name == 'Mammal' %}
+                                <i class="fas fa-otter"></i>
+                            {% elif species.taxonomic_group.name == 'Plant' %}
+                                <i class="fas fa-seedling"></i>
+                            {% elif species.taxonomic_group.name == 'Reptile' %}
+                                <i class="fas fa-dragon"></i>
+                            {% elif species.taxonomic_group.name == 'Insect' %}
+                                <i class="fas fa-bug"></i>
+                            {% else %}
+                                <i class="fas fa-paw"></i>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="species-info">
+                        <h5 class="species-name">
+                            {% if species.common_name_fr %}
+                                {{ species.common_name_fr }}
+                            {% elif species.common_name_local %}
+                                {{ species.common_name_local }}
+                            {% else %}
+                                {{ species.scientific_name }}
+                            {% endif %}
+                        </h5>
+                        {% if species.scientific_name %}
+                            <p class="species-scientific">{{ species.scientific_name }}</p>
+                        {% endif %}
+                        <span class="species-group">{{ species.taxonomic_group.name }}</span>
+                        {% if species.iucn_status %}
+                            <div class="mt-2">
+                                <span class="badge {% if species.iucn_status == 'LC' %}bg-success{% elif species.iucn_status == 'NT' %}bg-info{% elif species.iucn_status == 'VU' %}bg-warning{% elif species.iucn_status == 'EN' or species.iucn_status == 'CR' %}bg-danger{% else %}bg-secondary{% endif %}">
+                                    {{ species.iucn_status }}
+                                </span>
+                            </div>
+                        {% endif %}
+                        <div class="mt-3">
+                            <a href="{% url 'species_detail' species.id %}" class="btn btn-sm btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h3>No species found</h3>
+                <p>Try adjusting your search criteria or browse all species.</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if page_obj.paginator.num_pages > 1 %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if selected_group %}&group={{ selected_group }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="First">
+                            <span aria-hidden="true">&laquo;&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if selected_group %}&group={{ selected_group }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+                
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}{% if selected_group %}&group={{ selected_group }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if selected_group %}&group={{ selected_group }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if selected_group %}&group={{ selected_group }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="Last">
+                            <span aria-hidden="true">&raquo;&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+</section>
+
+<!-- Taxonomic Groups Section -->
+<section class="container mb-5">
+    <div class="section-title" data-aos="fade-up">
+        <h2>Taxonomic Groups</h2>
+        <p>Explore species by taxonomic classification</p>
+    </div>
+    
+    <div class="row">
+        {% for group in groups %}
+            <div class="col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:100 }}">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        {% if group.name == 'Bird' %}
+                            <i class="fas fa-dove"></i>
+                        {% elif group.name == 'Fish' %}
+                            <i class="fas fa-fish"></i>
+                        {% elif group.name == 'Mammal' %}
+                            <i class="fas fa-otter"></i>
+                        {% elif group.name == 'Plant' %}
+                            <i class="fas fa-seedling"></i>
+                        {% elif group.name == 'Reptile' %}
+                            <i class="fas fa-dragon"></i>
+                        {% elif group.name == 'Insect' %}
+                            <i class="fas fa-bug"></i>
+                        {% else %}
+                            <i class="fas fa-paw"></i>
+                        {% endif %}
+                    </div>
+                    <h3 class="feature-title">{{ group.name }}</h3>
+                    <p>{{ group.description|default:"Species classified in this taxonomic group" }}</p>
+                    <a href="{% url 'species_list' %}?group={{ group.name }}" class="btn btn-outline-primary">View Species</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

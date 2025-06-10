@@ -1,0 +1,241 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}User Profile - GeoWetlands Mauritania{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="detail-header">
+    <div class="container">
+        <h1 class="detail-title" data-aos="fade-up">User Profile</h1>
+        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">Manage your account and preferences</p>
+    </div>
+</section>
+
+<!-- Profile Section -->
+<section class="container section-padding">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3 mb-4 mb-lg-0">
+            <div class="card" data-aos="fade-right">
+                <div class="card-body text-center">
+                    <div class="rounded-circle mx-auto d-flex align-items-center justify-content-center bg-light mb-3" style="width: 120px; height: 120px;">
+                        <i class="fas fa-user fa-4x text-primary"></i>
+                    </div>
+                    <h5 class="card-title">{{ user.get_full_name|default:user.username }}</h5>
+                    <p class="text-muted">{{ user.email }}</p>
+                    <div class="d-grid gap-2 mt-3">
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-camera me-2"></i> Change Photo
+                        </a>
+                    </div>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="#profile-info" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-user-circle me-2"></i> Profile Information
+                    </a>
+                    <a href="#account-settings" class="list-group-item list-group-item-action">
+                        <i class="fas fa-cog me-2"></i> Account Settings
+                    </a>
+                    <a href="#notifications" class="list-group-item list-group-item-action">
+                        <i class="fas fa-bell me-2"></i> Notifications
+                    </a>
+                    <a href="#activity" class="list-group-item list-group-item-action">
+                        <i class="fas fa-chart-line me-2"></i> Activity
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid">
+                        <a href="{% url 'logout' %}" class="btn btn-danger">
+                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Profile Information -->
+            <div id="profile-info" class="card mb-4" data-aos="fade-up">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0"><i class="fas fa-user-circle text-primary me-2"></i> Profile Information</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" value="{{ user.first_name }}">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" value="{{ user.last_name }}">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" value="{{ user.email }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="organization" class="form-label">Organization</label>
+                            <input type="text" class="form-control" id="organization" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bio" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i> Save Changes
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Account Settings -->
+            <div id="account-settings" class="card mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0"><i class="fas fa-cog text-primary me-2"></i> Account Settings</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="mb-3">Change Password</h6>
+                    <form>
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-key me-2"></i> Update Password
+                        </button>
+                    </form>
+                    
+                    <hr class="my-4">
+                    
+                    <h6 class="mb-3">Language Preferences</h6>
+                    <form>
+                        <div class="mb-3">
+                            <label for="language" class="form-label">Preferred Language</label>
+                            <select class="form-select" id="language">
+                                <option value="en" selected>English</option>
+                                <option value="fr">Français</option>
+                                <option value="ar">العربية</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-globe me-2"></i> Save Preferences
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Notifications -->
+            <div id="notifications" class="card mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0"><i class="fas fa-bell text-primary me-2"></i> Notifications</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+                            </div>
+                            <div class="form-text text-muted">Receive email notifications about updates and activities.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="siteUpdates" checked>
+                                <label class="form-check-label" for="siteUpdates">Wetland Site Updates</label>
+                            </div>
+                            <div class="form-text text-muted">Notifications about changes to wetland sites you follow.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="speciesUpdates" checked>
+                                <label class="form-check-label" for="speciesUpdates">Species Updates</label>
+                            </div>
+                            <div class="form-text text-muted">Notifications about changes to species data.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="newsletterUpdates">
+                                <label class="form-check-label" for="newsletterUpdates">Newsletter</label>
+                            </div>
+                            <div class="form-text text-muted">Receive our monthly newsletter with updates and news.</div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-2"></i> Save Preferences
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Activity -->
+            <div id="activity" class="card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0"><i class="fas fa-chart-line text-primary me-2"></i> Recent Activity</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Your activity will be displayed here once you start interacting with the platform.
+                    </div>
+                    
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">Logged in</div>
+                                <small class="text-muted">First login to the platform</small>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">Now</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for profile section links
+        document.querySelectorAll('.list-group-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.list-group-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to target section
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

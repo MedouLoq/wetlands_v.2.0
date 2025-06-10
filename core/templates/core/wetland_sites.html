@@ -1,0 +1,176 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Wetland Sites - GeoWetlands Mauritania{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="detail-header">
+    <div class="container">
+        <h1 class="detail-title" data-aos="fade-up">Wetland Sites</h1>
+        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">Explore Mauritania's diverse wetland ecosystems</p>
+    </div>
+</section>
+
+<!-- Filter Section -->
+<section class="container mb-5">
+    <div class="filter-section" data-aos="fade-up">
+        <form id="filter-form" method="get" class="row g-3 align-items-end">
+            <div class="col-md-4">
+                <label for="region" class="form-label">Filter by Region</label>
+                <select name="region" id="region" class="form-select">
+                    <option value="">All Regions</option>
+                    {% for region in regions %}
+                        {% if region %}
+                            <option value="{{ region }}" {% if selected_region == region %}selected{% endif %}>{{ region }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="search" class="form-label">Search</label>
+                <div class="input-group">
+                    <input type="text" name="q" id="search" class="form-control" placeholder="Search by name..." value="{{ search_query }}">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a href="{% url 'wetland_sites' %}" class="btn btn-outline-secondary w-100">
+                    <i class="fas fa-redo"></i> Reset
+                </a>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Sites Grid -->
+<section class="container mb-5">
+    <div class="row">
+        {% for site in page_obj %}
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:100 }}">
+                <div class="card h-100">
+                    <div class="card-img-top">
+                        {% if site.image %}
+                            <img src="{{ site.image.url }}" alt="{{ site.name }}" class="img-fluid">
+                        {% else %}
+                            <div class="d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+                                <i class="fas fa-water fa-3x text-primary"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ site.name }}</h5>
+                        <p class="card-text">
+                            <i class="fas fa-map-marker-alt text-primary"></i> {{ site.region }}{% if site.commune %}, {{ site.commune }}{% endif %}
+                        </p>
+                        <p class="card-text">
+                            {% if site.description_ecological %}
+                                {{ site.description_ecological|truncatechars:100 }}
+                            {% else %}
+                                A significant wetland site in Mauritania with important ecological value.
+                            {% endif %}
+                        </p>
+                        <a href="{% url 'wetland_site_detail' site.id %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12 text-center py-5">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h3>No wetland sites found</h3>
+                <p>Try adjusting your search criteria or browse all sites.</p>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Pagination -->
+    {% if page_obj.paginator.num_pages > 1 %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if selected_region %}&region={{ selected_region }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="First">
+                            <span aria-hidden="true">&laquo;&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if selected_region %}&region={{ selected_region }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+                
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}{% if selected_region %}&region={{ selected_region }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if selected_region %}&region={{ selected_region }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if selected_region %}&region={{ selected_region }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" aria-label="Last">
+                            <span aria-hidden="true">&raquo;&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+</section>
+
+<!-- Map Preview Section -->
+<section class="container mb-5">
+    <div class="section-title" data-aos="fade-up">
+        <h2>Wetland Sites Map</h2>
+        <p>View the geographical distribution of wetland sites</p>
+    </div>
+    
+    <div class="map-container" data-aos="fade-up">
+        <div id="map"></div>
+    </div>
+    
+    <div class="text-center mt-4" data-aos="fade-up">
+        <a href="{% url 'map' %}" class="btn btn-primary btn-lg">Open Full Map</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Initialize map with site markers if available
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create a hidden element with site data for the map
+        const sitesData = [
+            {% for site in page_obj %}
+                {% if site.geometry %}
+                {
+                    id: {{ site.id }},
+                    name: "{{ site.name }}",
+                    region: "{{ site.region|default:'N/A' }}",
+                    commune: "{{ site.commune|default:'N/A' }}",
+                    geometry: {{ site.geometry.json|safe }}
+                },
+                {% endif %}
+            {% endfor %}
+        ];
+        
+        // Create a hidden element to store the data
+        const sitesDataElement = document.createElement('div');
+        sitesDataElement.id = 'sites-data';
+        sitesDataElement.setAttribute('data-sites', JSON.stringify(sitesData));
+        sitesDataElement.style.display = 'none';
+        document.body.appendChild(sitesDataElement);
+    });
+</script>
+{% endblock %}

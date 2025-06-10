@@ -1,0 +1,142 @@
+id,name,code,region,commune,area_hectares,designation_date,ramsar_criteria_met,description_ecological,description_physical,hydrology_summary,climate_summary,land_use_current,land_use_adjacent,social_cultural_values,conservation_measures_taken,conservation_measures_proposed,threats_anthropogenic,threats_natural,contacts,geometry,data_source_id,created_at,updated_at
+1,Khathre,,Guidimakha,Tektak,,,,,,Juillet à Mai,,La pêche est réalisée au niveau de Khathre principalement à partir du mois de Mai jusqu'à tarissement de la Mare. Les produits de la pêche sont principalement destinés à la consommation locale. La zone constitue une zone de pâturage pour les v,,"Khathre a un potentiel touristique et pastoral, elle peut également constituée une zone de pêche périodique pendant la période d'eau.",,"Fixation des dunes, 
+Curage de la mare
+Mise en place de règles de gestion pour harmoniser entre les différents utilisateurs, 
+Doter les services compétents et les populations organisées en moyen de surveillance des forêts environnantes,
+Développer","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) En pÃ","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…) La principale menace naturelle qui se pose pour la Zone humide de Khathre est l'ensablement et le ravinement. L'ensablement est constaté à l'Es",MED ould Elmami Maire de la commune de Tektak et président de l'AGLC et de la fétiaire de Guidimakha. 44857826/41667251 Benahi Ould El Mami 49450815,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+2,IRIJI TEKTAK,,Guidimakha,TEKTAK,,,,,,Permanent (Cours d'eau tirant sa source des montagnes environnantes),,"Il y'a une production agricole qui s'est développée autour de Iriji Tektak. Il s'agit de production céréalière telle que le mil et de sorgho mais aussi de Henna, palmier dattier, palmier Doum, niébé ainsi que la production de légumes divers",,,,"Fourniture de clôture pour les agriculteurs afin de diminuer la pression sur les ressources ligneuses 
+	Le site d'Iriji a un potentiel touristique qu'il est important de développer 
+	Une unité de transformation des PFNL est encours de mise en pla","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche). La p","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). Il y'a un risque d'ensablement du cours d'eau dû à l'amenuisement du couvert végétal le bordant et une accentuation de l'érosion.",MED ould Elmami Maire de la commune de Tektak et président de l'AGLC et de la fétiaire de Guidimakha. 44857826/41667251 Benahi Ould El Mami 49450815,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+3,Wofou Kharé,,Guidimakha,Gouraye,,,,,,Juillet à Janvier (Novembre pendant les années de faible pluies,,"Jadis la mare permettait la riziculture cependant il subsiste actuellement une petite superficie rizicole avoisinant la mare. La mare permettait une pratique agricole pour les différents villages environnants, cette superficie s'est trouver réduite s",,,,"Mettre en place une unité de production piscicole et former la population locale dans ce domaine. La mise en place d'étangs piscicole permettrait aux populations de Diaguili jusqu'à Ghabou d'en profiter.
+	Mettre en place des activités de reboi","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche). Séd","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). Ensablement en amont de la mare et rupture de la connexion hydrique avec le fleuve qui permettait de recharger la mare.","Dodou Hamadi Soumaré, 46771738",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+4,Golmi Khare,,Guidimakha,Diogountourou,,,,,,Juillet – Mai,,"Autour de la mare il s'y pratique une agriculture vivrière important notamment la culture d'arachide, de Bissap, Niébé, Sorgho en plus des cultures maraichères. La pêche est pratiquée dans la mare, les poissons peuvent être d'une taille cons",,,,"Valorisation du riz sauvage à travers la formation des populations locales et la mise en place d'une unité de transformation. 
+	Appuyer la surveillance de la zone contre le braconnage et la coupe des arbres
+	Mettre en place une activités d'enrich","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche)","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). Aucune menace naturelle n'a été recueillit",,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+5,Wompou Kharé,,Guidimakha,Wompou,,,,,,Permanent,,"L'agriculture de décru est une activité importante au niveau de la mare notamment la culture de Sorgho, Maïs et niébé ; il y a également le maraichage et l'arboriculture. La pêche est pratiquée principalement à partir du mois de février qu",,L'eau de la mare vient du fleuve ou également des ruissellements de l'eau de pluies ainsi que sa connexion avec d'autres mares.,,"Fournir des clôtures aux agriculteurs qui sont autour de la mare afin d'éviter la coupe de bois 
+	Protéger la forêt se trouvant au Sud de la mare (entre la mare et le fleuve pour éviter la dégradation de la mare) voir la possibilité de la class","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche). La c","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). Attaque de criquet pèlerin par moment",Hamidou BA Agriculteur et pécheur 46639480,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+6,Warle (Sinthiane padalal),,Gorgol,Waly,,,,,,Permanent,,La pêche est une activité majeure qui se fait au niveau de la mare. La pêche est ouverte du mois de Mai ou Juin pour fermer en juillet (Début des pluies). Lors de la cérémonie d'ouverture les villages environnant participent tous à la pêche et,,,,Mise en place d'activités piscicole au bénéfice des populations car le niveau de l'eau a baissé dans la mare et ne permet pas une abondance du poisson. S'ajoute à cela la diminution du ruissèlement de l'eau provenant de Garfa et charriant,"(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche). Les","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). L'envasement de la mare la mare a était constaté par la population ainsi que la diminution des ressources halieutiques qui sont charriées par les","Abdoul Ba, chef de village 26781201",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+7,Windou Yibame,,Grogol,Maghama,,,,,,Juin à mars,,"L'Agriculture est pratiquée autour de la zone humide de Yibame. Il s'agit principalement de cultures de sorgho, Maîs, niébé, et du maraichage. Les troupeaux s'abreuvent sur la mare de Yibame. En saison sèche les troupeaux de dromadaire y sont",,,,"surveillance accru, protection des forêts par la surveillance, Mise en place d'un mode de gestion.
+	Appuyer la surveillance de la Mare pour la protection des forêts et la lutte contre le braconnage 
+	Appuyer les agriculteurs pour la clôture des supe","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) :  Les","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement ……) Envasement, perte de la biodiversité",Correra Alassane,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+8,Windou Mêye,,Grogol,Dolol,,,,,,Permanent (ne s'est asséché qu'une fois lors de la sècheresse des année 1972),,"La mare de Mêye longue de 4 à 5 km sur une largeur de 800 à 1000 m selon les saisons et la pluviométrie. La principale activité qui y est conduite, est la pêche. L'activité de pêche au niveau de la mare est régulée par un comité de gestion,",,"Mêye est une des plus importantes zones humides environ 20000 personnes ou plus profitent des poissons de la Mare. Ces personnes sont issues de tout la zone jusqu'à Maghama et Koundel, et au-delà de l'autre côté du Senegal (Richard toll, Bakelâ€",,"•	Appui aux surveillants (Association des pécheurs de Mêye) pirogues pour lutter contre la pêche illicite (des bottes, Gilet, torches puissante, chaussures de sécurités).
+•	Appuyer la régularisation de l'association des pécheurs à travers l","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) : 
+Malg","(Erosion, ensablement dunes mobiles, destruction des habitats, perte biodiversité, envasement……)  
+Aucun risque naturel n'est à déplorer.","Daouda 
+Samba Sy membre bureau 
+Samba Oumar Ba 47751048 maire adjoint 
+Diam Samba Sy Président association des pécheurs 
+Demba ly Adjoint président de l'association des pécheurs 47414690",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+9,Gawradji,,Grogol,DAO,,,,,,permanant,,"La pêche est la principale activité. Elle est ouverte seulement de juin à juillet. Au moment de l'ouverture de la campagne qui dure deux jours, les pécheurs de toute la zone viennent y assister. 
+	La culture de décru concerne le Sorgho, Niébé e",,,,"Les arbres autour et à l'intérieur de la Mare doivent être entretenus et le bois obtenu, exploité. 
+	Appuyer les pêcheurs en pirogues supplémentaires, Frigidaire solaire, bottes, filets et gilets.  Les matériels à fournir doivent être validé","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) : 
+La c","(Erosion, ensablement, dunes mobiles, destruction des habitats, pertes de la biodiversité, envasement …) : 
+Perte de biodiversité, les arbres sont vieillissants et tombent à cause des vents surtout vers la localité de Toumbé.","Demba Bayo Niang, Abibou Bayo Niang, Samba Abou Gueye, Amadou Saidou Sow, Brahim ould Mahmoud",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+10,Délama,,Gorgol,Toufoundé civé,,,,,,permanant,,"L'élevages est pratiqué autour de la mare permettant aux animaux de s'y abreuver surtout en saison sèche. 
+	 L'agriculture n''est pas pratiqué autour de la mare. 
+	La pêche est une des principales activités réalisé dans la mare. Cette",,"L'OMVS a entamé un projet d'appui à la pisciculture pour les pécheurs locaux. Elle a ainsi réalisé des étangs piscicoles, fournit des congélateur, pirogues, Balance… Cependant le projet n'a pas abouti car le matériel a été dérobé fau",,"•	Appuyer la surveillance des forêts 
+•	Appuyer les agriculteurs à travers l'aménagement d'une zone agricole et la fourniture de matériel d'irrigation. 
+•	Approfondissement de la zone de reproduction du poisson qui se trouve au sud de Dé","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) : 
+Coup","(Erosion, ensablement, dunes mobiles, destruction des habitats, pertes de la biodiversité, envasement …):  envasement",Abdoulaye boubou Diaw ciné (président comité de gestion de la mare) 49850713,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+11,Gouweylitt,,Trarza,R'Kiz,,,,,,Permanent,,"La pêche est pratiquée pendant toutes les périodes. Le village de Gweylitt vie principalement de la pêche. 
+	L'agriculture est très présente autour de cette zone humide. Il s'agit principalement de rizicultures irrigué ainsi que du maraichage",,Le principal problème pour les populations et leurs activités est la présence des hippopotames.,,•	Les populations proposent de déplacer les hippopotames ou de les éliminer car ils out tuer une personne et baissés un enfant à Gani et un autre pécheur à Gouweylitt.  Ces animaux constituent une grande menace pour les pêcheurs et rend leurs ac,"(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche)
+Le brac","(Erosion, ensablement, dunes mobiles, destruction des habitats, pertes de biodiversité, envasement …) 
+La menace d'ensablement est faible car la zone humide a été curée en 2019 et depuis l'eau est permanente.","Pathé Djiby Sy 41156753-32728333
+Maodo lo 41511653
+Hamedine lo 49840570
+Babacar Gueye 41329118",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+12,Laeweija,,Trarza,Teychtayatt,,,,,,Permanent,,"L'agriculture dans cette zone humide concerne principalement le maraichage, les cultures de niébé, Mangues, Bananes, citrons, palmier dattier. 
+	La pêche est pratiquée par la population locale, les localités de autres villages de la région et de",,,,"•	Réaliser une formation en pêche et fournir un appui matériel, pirogue (motorisée), filets, hameçon, pour le séchage du poisson et frigidaire. 
+•	Réaliser une formation en pisciculture et mise en place d'une unité de production piscicole.","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche).  Les Ã","Menaces naturelles : (Erosion, ensablement, dunes mobiles, destruction des habitats, pertes de biodiversité, envasement …) : 
+Il y'a un ensablement autour de la zone humide principalement au niveau des zones agricoles.","Athigh ould Bah 47403625
+Brahim ould Bah 42004188",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+13,Djéllouar,,Brakna,Djéllouar,,,,,,permanent,,La pêche est une activité qui est réalisée en saison sèche par les pécheurs venant d'ailleurs. Les produits de la pêche sont revendus à la population locale. La population locale n'a pas de connaissance sur la pêche cependant elle consomme,,,,"•	Formation sur la pêche et appui en matériel de pêche. 
+•	Appui en pirogue traditionnelle et Frigidaire. 
+•	Besoin de clôture et matériel pour l'agriculture, semence et matériel traction animale.","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche)
+Il y'","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement ……) : 
+Pas de menace","Ethmane ould Boylil: 46 44 53 51
+Mokhtar ould Jara: 46 75 34 50",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+14,Lac d'Aleg,,Brakna,Aleg,,,,,,non permanent   10 mois (s'assèche deux mois avant les pluies),,"Les cultures de sorgho, Niébé cherkach sont les principales productions. 
+	Les animaux de toute la zone s'abreuvent au niveau du lac d'Aleg et profitent des pâturages autour. 
+	Il n'y'a pas d'activité de pêche depuis deux ans.",,,,"•	Appui en clôture et matériels agricoles et intrants pour l'agriculture de décrue 
+•	Appui en fourrage en période sèche 
+•	Mener une sensibilisation contre la pollution du lac par les déchets.","(culture de décru et maraichage, surpâturage, utilisation excessive de l'eau, urbanisation exploitation de la nappe phréatique, coupe des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) 
+Le bra","(Erosion, ensablement, dunes mobiles, destruction des habitats, pertes de biodiversité, envasement ……) :
+Perte de biodiversité principalement les oiseaux",Yihdiha mint Yargeyt  Jemea mint Yargueyt 36013328 Cheikh Mouhamed Amar Bilal : 46537935/34537935,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+15,Lac de Mâl,,Brakna,Mâl,,,,,,Le lac est permanent la zone nord ne tarit pas sauf en période de sècheresse prolongée,,"La culture de sorgho, niébé, maïs, pastèque, déné boudi et différentes spéculations maraichères sont réalisées au abord du lac. 
+	La pêche est une activité pratiquée depuis des années par la population locale qui en tirent des revenus sup",,"Le lac de Mâl prend sa source de appartir de Bouval en passant par Lkhteit, Leyen, Agneytir, Khêt lakhdhar et levreyeatt puis déverse dans Erem lekbir, Erem leseqir, Kra lbkhaniss, Deli lesqir et Deli lekbir.",,"Formation sur la pêche et un appui en matériel, transformation et la vente, Frigo, mise en place d'une unité de transformation, zone de séchage 
+	Appuyer les agriculteurs qui sont organisés autour de 4 coopératives en produits de lutte contre le","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche). Le b","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…) 
+
+Il y avait un problème d'ensablement qui a été stoppé par la fixation biologique à base de Prosopis juliflora depuis des années. Aucun envahi","Ahmed Ould Hamessa – 37392148
+	Président de l'association locale des pécheurs – Souleymane Ould Seyni 46095589",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+16,Keybi,,Hodh El Chargui,Koumbi Saleh,,,,,,Juin à Mai,,"L'agriculture pratiquée concerne seulement, le sorgho et le niébé. 
+	La population locale ne s'interessant pas à la pêche, le poisson est pêché par les maliens puis exporté au Mali gracieusement. 
+	Les eleveurs de tous les Hodhs s'abriter",,"L'eau Vient de l'Est, Oued Guete et Teijett. Au Sud Oued Jarel Kherch, Oued Jar Teychett",,"Installation d'un réseau d'eau potable pour la localité. 
+	Les eleveures sollicitent la culture fourragére.
+	Founiture de clotures pour les agriculteutrs.
+	Mettre en place des barrages pour les cultares d'arriere barrage.
+	Appuyer les agriculte",Coupe pour la carbonisation et l'érection de clotures.,Aucun probléme n'est à déplorer,"Chekroud ould Mohamed Vall 27016957
+	Ali ould Mah 22 64 25 81
+	Bate ould Dahmed 26 5259 82 
+	EL Kebir ould Jaber 22 66 17 13",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+17,Chlem,,Hodh El Gharbi,Oum Lahyadh,,,,,,Juin à Fevrier habituellement mais en absense d'eau elle tarit en décembre,,"L'agriculture n'est plus pratiquée car les population actives ne sont plus présentes sur place. 
+	Il n'ya que l'élevage qui est pratiqué dans la zone humide.
+	Il n'ya pas d'activtés de pêches dans la zone humide car il n'ya pas de po",,La zone humide de Chlem est typiquement une zone pastorale.,,"Appuyer la surveillance pour la lutte contre la carbonisation et le braconnage. 
+	Curage de la mare et des cours d'eau qui l'alimentent.
+	Elimination du barrage (Digue) mis en place à l'Est et obstruant l'arriver de l'eau dans la mare. 
+	Mett","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche)
+
+	Sé","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…) 
+
+La mare est en situation d'envasement avancé.",Mahfoudh ould sidi Mokhtar   48564045,,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+18,Tally Lekhdar,,Hodh El Gharbi,Kobenni,,,,,,Aout à Juin 11 Mois,,"L'élevage est très pratiqué dans cette zone humide qui constitue un enorme refuge en saison séche particuliérement pour les bovins.
+	Les cultures de sorgho, niébé, henna, Tomate et nana sont pratiquées
+	La pêche est une activité qui n'est",,,,"Appuyer la surveillance contre la coupe et le braconnage 
+	Fournir du grillage pour les Agriculteurs et des intrants 
+	Installer des puits pastoraux
+	Realiser des formations sur la pèche et la transformation des produits halieutiques. 
+	Appui en Matér","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche)
+
+Les","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…)
+ 
+La mort des Acacia nilotica quand l'eau est restée longtemps sur les pieds en plus de la coupe, les cours d'eau qui alimentent mare sont ensevel","Hassene ould Baha 44014837
+Sileye Djiby Dia 
+Boubacar Alioune Ba 42262802",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+19,Tough,,Hodh El Chargui,Mavnadech,,,,,,Permanant mais tarit en cas de mauvaise pluviometrie,,"Il s'y exerce la culture de sorgho, niébé, petit mil, maraichère et palmier dattier. 
+	La pêche est une activité qui ne se pratique pas par la population locale et les produits de la pêche ne sont pas prisés par ces derniers. La pêche est excl",,L'eau de la zone humide provient de l'Est au niveau de l'Oued Slelihi,,"Fournir un appui en cloture et intrants pour les agriculteurs 
+	Fournir du materiel de pompade pour l'irrigation
+	Realiser une formation en péche et un appui en matériel de pêche. 
+	Mettre en place des moyens de prophylaxie (vaccin) parc de vaccina","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche) -Il y","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). Envasement en cours mais pas très important.","Sidi Oumar Ould Boybacar 44736912
+	Sidi Ould Mohamed Moylil",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+20,Demberi,,Hodh El Gharbi,Tintane,,,,,,Permanent,,"L'agriculture est pratiquée au nord de la zone humide. Il s'agit principalement de niébé, sorgho, maïs, blé et maraichage.
+	La pêche est pratiquée par les maliens au niveau de la mare gratuitement et l'ensemble de la production est exporté",,,,"Fourniture de clotures pour les agriculteurs contre le betail et autre aléas 
+	Appuyer les agriculteurs en intrants et matériel en plus d'un encadrement technique. 
+	Dédié le côté nord de la zone humide à l'abreuvement du betail.
+	Appuyer les","(culture de décru et maraichage, surpâturage, utilisation excessif de l'eau, urbanisation, exploitation de la nappe phréatiques, coupes des arbres, élevage, braconnage, pêche, élagage et émondage, charbon de bois, sédentarisation, pêche). La c","(Erosion, ensablement, dunes mobiles, destruction des habitats, perte de biodiversité, envasement…). Aucun probléme particulier n'a été souligné.","Mohamed Vateghme 46442646
+	Sidi ould bilal 48086189",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+21,Gounguel,,Hodh El Gharbi,Benamane,,,,,,8 à    9 mois mais pendant les bonnes années elle ne tarit pas N,,"La culture de sorgho, niébé, maïs, maraichage et même le blé sont réalisées. 
+	La pêche est réalisée essentiellement par les maliens jusqu'à tarissement de l'eau. 
+	L'élevage est une des plus importantes activités au niveau de cette z",,La mare prend sa source principalement des mares environnantes.,,"Réaliser une cloture de toute la mare (soit 12Km) avec trois porte pour les animaux en y incluant les superficies agricoles. 
+	Curage des cours d'eau qui alimentent la mare
+	Réaliser une fixation des dunes à l'ouest
+	Réaliser une formation en pÃ","Il y'a un surpaturage au niveau de Gounguel car tous les animaux des localités environnantes jusqu'à tintane viennent y paturer. 
+	Le braconnage est une pratique fréquente malgré que la zone humide soit à l'intérieur d'une zone de gestion",Il y'a un ensablement du côté ouest de la mare.,"Sid Ahmed oud Mohamed          44 76 04 86 
+	Hamoud oud Sid ahmedat       46 16 90 01",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+22,El Vadra,,Hodh El Chargui,Adel Bagrou,,,,,,permanent mais a tarit en 2022.,,"Les spéculations cultivées sont le niébé, sorgho, Kouz et maraichage. 
+	Les eleveurs passent la saison séche autour de la mare.
+	La pêche est pratiquée principalement par les maliens et les produits sont exportés au Mali. Les pecheurs payent par",,La mare prend sa source des oueds du nord et du sud cependant beaucoup de barrages ont été mis sur les cours d'eau causant un tarrisement de la mare. Même avec les bonnes pluviométries la mare ne se remplie pas sauf quand il y'a une rupture de ba,,"Appuyer les agriculteurs en intrant
+	Fournir des clotures aux agriculteurs
+	Realiser une formation en pêche et fournir un appui materiel. 
+	Regler les problématiques de barrage qui empechent la mare de se remplir.
+	Fournir un appui en materiel d'irr",Les arbres sont élagués pour l'erection de clotures. Il y'a également des activités de braconnage.,Pas de problémes d'ensablement mais une perte de biodiversité est constatée.,"Cheikh Bouye Ould Cheikh Med Laghdhav 36 17 03 32
+	Hamoulah Ould Mouhmed 33 01 59 11
+	Abdallhi  Traoré    41 42 01 27 
+	Mohamed Ali Ould CHEKHs",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00
+23,Vough,,Hodh El Chargui,Ghlig Ehl Boya,,,,,,Permanent mais quand pluviométrie est faible il y'a un tarissement et dure 9 mois.,,"L'agriculture pratiqué autour de la zone humide de Vough concerne principalement le Sorgho, niébé, et Voundi
+	La pêche est uniquement pratiquée par les maliens et exporter entiérement au Mali. 
+	Les eleveurs de toute la zone s'empresse au nive",,,,"Realiser des cloture pour les agriculteurs pour éviter la coupe des arbres.
+	Fournir des machines de pompage et irrigation. 
+	Fournir des intrants et semences améliorées. 
+	Fournir du petit matériel à traction animale
+	Realiser une fixation des dun",Les arbres sont coupés et élagués. Ils sont également carbonisés. Il y'a un surpaturage au niveau de la mare mais aussi une forte activité de braconnage.,"Un ensablement est constaté au Nord-Est de la mare accentuée par les coupes abusives, la carbonisation et le surpaturage.","Abderrahmane ould Cheikh Mahfoudh Beya 46520617
+	Mohamed Mahmoud 41143333
+	Mohamed Vadel ould Salek",,1,2025-06-04 14:29:44.803851+00:00,2025-06-04 14:29:44.805034+00:00

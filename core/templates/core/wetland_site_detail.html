@@ -1,0 +1,379 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{ site.name }} - GeoWetlands Mauritania{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="detail-header">
+    <div class="container">
+        <h1 class="detail-title" data-aos="fade-up">{{ site.name }}</h1>
+        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-map-marker-alt"></i> {{ site.region }}{% if site.commune %}, {{ site.commune }}{% endif %}
+        </p>
+    </div>
+</section>
+
+<!-- Site Details -->
+<section class="container section-padding">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-lg-8 mb-4 mb-lg-0">
+            <!-- Overview -->
+            <div class="detail-section" data-aos="fade-up">
+                <h2 class="detail-section-title">Overview</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-info-circle text-primary me-2"></i> Basic Information</h5>
+                                <ul class="list-unstyled">
+                                    {% if site.code %}
+                                        <li class="mb-2"><strong>Code:</strong> {{ site.code }}</li>
+                                    {% endif %}
+                                    <li class="mb-2"><strong>Region:</strong> {{ site.region|default:"Not specified" }}</li>
+                                    <li class="mb-2"><strong>Commune:</strong> {{ site.commune|default:"Not specified" }}</li>
+                                    {% if site.area_hectares %}
+                                        <li class="mb-2"><strong>Area:</strong> {{ site.area_hectares }} hectares</li>
+                                    {% endif %}
+                                    {% if site.designation_date %}
+                                        <li class="mb-2"><strong>Designation Date:</strong> {{ site.designation_date }}</li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-water text-primary me-2"></i> Hydrology</h5>
+                                {% if site.hydrology_summary %}
+                                    <p>{{ site.hydrology_summary }}</p>
+                                {% else %}
+                                    <p class="text-muted">No hydrology information available.</p>
+                                {% endif %}
+                                
+                                {% if site.climate_summary %}
+                                    <h5 class="mt-3"><i class="fas fa-cloud-sun text-primary me-2"></i> Climate</h5>
+                                    <p>{{ site.climate_summary }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <div class="card mb-4 mt-2">
+                    <div class="card-body">
+                        <h5><i class="fas fa-file-alt text-primary me-2"></i> Description</h5>
+                        
+                        {% if site.description_ecological %}
+                            <h6 class="mt-3">Ecological Characteristics</h6>
+                            <p>{{ site.description_ecological }}</p>
+                        {% endif %}
+                        
+                        {% if site.description_physical %}
+                            <h6 class="mt-3">Physical Characteristics</h6>
+                            <p>{{ site.description_physical }}</p>
+                        {% endif %}
+                        
+                        {% if site.social_cultural_values %}
+                            <h6 class="mt-3">Social and Cultural Values</h6>
+                            <p>{{ site.social_cultural_values }}</p>
+                        {% endif %}
+                        
+                        {% if not site.description_ecological and not site.description_physical and not site.social_cultural_values %}
+                            <p class="text-muted">No detailed description available for this site.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Land Use -->
+            <div class="detail-section" data-aos="fade-up">
+                <h2 class="detail-section-title">Land Use</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-home text-primary me-2"></i> Current Land Use</h5>
+                                {% if site.land_use_current %}
+                                    <p>{{ site.land_use_current }}</p>
+                                {% else %}
+                                    <p class="text-muted">No information available on current land use.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-map text-primary me-2"></i> Adjacent Land Use</h5>
+                                {% if site.land_use_adjacent %}
+                                    <p>{{ site.land_use_adjacent }}</p>
+                                {% else %}
+                                    <p class="text-muted">No information available on adjacent land use.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Biodiversity -->
+            <div class="detail-section" data-aos="fade-up">
+                <h2 class="detail-section-title">Biodiversity</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5><i class="fas fa-leaf text-primary me-2"></i> Species Inventory</h5>
+                        
+                        {% if species %}
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Scientific Name</th>
+                                            <th>Common Name</th>
+                                            <th>Group</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for sp in species %}
+                                            <tr>
+                                                <td>
+                                                    {% if sp.scientific_name %}
+                                                        <em>{{ sp.scientific_name }}</em>
+                                                    {% else %}
+                                                        -
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    {% if sp.common_name_fr %}
+                                                        {{ sp.common_name_fr }}
+                                                    {% elif sp.common_name_local %}
+                                                        {{ sp.common_name_local }}
+                                                    {% else %}
+                                                        -
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    {% if sp.taxonomic_group %}
+                                                        {{ sp.taxonomic_group.name }}
+                                                    {% else %}
+                                                        -
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    {% if sp.iucn_status %}
+                                                        <span class="badge {% if sp.iucn_status == 'LC' %}bg-success{% elif sp.iucn_status == 'NT' %}bg-info{% elif sp.iucn_status == 'VU' %}bg-warning{% elif sp.iucn_status == 'EN' or sp.iucn_status == 'CR' %}bg-danger{% else %}bg-secondary{% endif %}">
+                                                            {{ sp.iucn_status }}
+                                                        </span>
+                                                    {% else %}
+                                                        -
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            {% if species.count > 10 %}
+                                <div class="text-center mt-3">
+                                    <a href="#" class="btn btn-outline-primary">View All Species</a>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                            <p class="text-muted">No species inventory available for this site.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Threats and Conservation -->
+            <div class="detail-section" data-aos="fade-up">
+                <h2 class="detail-section-title">Threats and Conservation</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-exclamation-triangle text-primary me-2"></i> Threats</h5>
+                                
+                                {% if threats %}
+                                    <h6 class="mt-3">Anthropogenic Threats</h6>
+                                    <ul>
+                                        {% for threat in threats %}
+                                            {% if threat.threat_type.name == 'Anthropogenic' %}
+                                                <li>{{ threat.name }}</li>
+                                            {% endif %}
+                                        {% empty %}
+                                            <li class="text-muted">No anthropogenic threats recorded.</li>
+                                        {% endfor %}
+                                    </ul>
+                                    
+                                    <h6 class="mt-3">Natural Threats</h6>
+                                    <ul>
+                                        {% for threat in threats %}
+                                            {% if threat.threat_type.name == 'Natural' %}
+                                                <li>{{ threat.name }}</li>
+                                            {% endif %}
+                                        {% empty %}
+                                            <li class="text-muted">No natural threats recorded.</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    {% if site.threats_anthropogenic %}
+                                        <h6 class="mt-3">Anthropogenic Threats</h6>
+                                        <p>{{ site.threats_anthropogenic }}</p>
+                                    {% endif %}
+                                    
+                                    {% if site.threats_natural %}
+                                        <h6 class="mt-3">Natural Threats</h6>
+                                        <p>{{ site.threats_natural }}</p>
+                                    {% endif %}
+                                    
+                                    {% if not site.threats_anthropogenic and not site.threats_natural %}
+                                        <p class="text-muted">No threat information available.</p>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-shield-alt text-primary me-2"></i> Conservation Measures</h5>
+                                
+                                {% if measures %}
+                                    <h6 class="mt-3">Implemented Measures</h6>
+                                    <ul>
+                                        {% for measure in measures %}
+                                            {% if measure.status == 'Implemented' or measure.status == 'Ongoing' %}
+                                                <li>{{ measure.name }}</li>
+                                            {% endif %}
+                                        {% empty %}
+                                            <li class="text-muted">No implemented measures recorded.</li>
+                                        {% endfor %}
+                                    </ul>
+                                    
+                                    <h6 class="mt-3">Proposed Measures</h6>
+                                    <ul>
+                                        {% for measure in measures %}
+                                            {% if measure.status == 'Proposed' %}
+                                                <li>{{ measure.name }}</li>
+                                            {% endif %}
+                                        {% empty %}
+                                            <li class="text-muted">No proposed measures recorded.</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    {% if site.conservation_measures_taken %}
+                                        <h6 class="mt-3">Measures Taken</h6>
+                                        <p>{{ site.conservation_measures_taken }}</p>
+                                    {% endif %}
+                                    
+                                    {% if site.conservation_measures_proposed %}
+                                        <h6 class="mt-3">Proposed Measures</h6>
+                                        <p>{{ site.conservation_measures_proposed }}</p>
+                                    {% endif %}
+                                    
+                                    {% if not site.conservation_measures_taken and not site.conservation_measures_proposed %}
+                                        <p class="text-muted">No conservation measure information available.</p>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Information -->
+            {% if site.contacts %}
+                <div class="detail-section" data-aos="fade-up">
+                    <h2 class="detail-section-title">Contact Information</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><i class="fas fa-address-book text-primary me-2"></i> Contacts</h5>
+                            <p>{{ site.contacts }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Map -->
+            <div class="card mb-4" data-aos="fade-up">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-map-marked-alt text-primary me-2"></i> Location</h5>
+                    <div id="site-map" style="height: 300px;"></div>
+                </div>
+            </div>
+            
+            <!-- Data Source -->
+            <div class="card mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-database text-primary me-2"></i> Data Source</h5>
+                    {% if site.data_source %}
+                        <p><strong>{{ site.data_source.name }}</strong></p>
+                        {% if site.data_source.source_type %}
+                            <p><strong>Type:</strong> {{ site.data_source.source_type }}</p>
+                        {% endif %}
+                        {% if site.data_source.organization %}
+                            <p><strong>Organization:</strong> {{ site.data_source.organization }}</p>
+                        {% endif %}
+                        {% if site.data_source.citation %}
+                            <p><strong>Citation:</strong> {{ site.data_source.citation }}</p>
+                        {% endif %}
+                    {% else %}
+                        <p class="text-muted">No data source information available.</p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Actions -->
+            <div class="card mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-tools text-primary me-2"></i> Actions</h5>
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'wetland_sites' %}" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-2"></i> Back to Sites
+                        </a>
+                        <a href="{% url 'map' %}" class="btn btn-outline-primary">
+                            <i class="fas fa-map me-2"></i> View on Map
+                        </a>
+                        {% if user.is_staff %}
+                            <a href="{% url 'admin:core_wetlandsite_change' site.id %}" class="btn btn-outline-primary">
+                                <i class="fas fa-edit me-2"></i> Edit in Admin
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize site map if geometry is available
+        {% if site.geometry %}
+            const map = L.map('site-map').setView([{{ site.geometry.y }}, {{ site.geometry.x }}], 10);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            
+            const marker = L.marker([{{ site.geometry.y }}, {{ site.geometry.x }}])
+                .addTo(map)
+                .bindPopup("{{ site.name }}");
+                
+            marker.openPopup();
+        {% endif %}
+    });
+</script>
+{% endblock %}
