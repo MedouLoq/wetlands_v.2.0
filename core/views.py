@@ -147,8 +147,20 @@ def map(request):
     # Get all wetland sites with geometry
     sites = WetlandSite.objects.exclude(geometry__isnull=True)
     
+    # Calculate statistics
+    total_sites = sites.count()
+    total_regions = sites.values('region').distinct().count()
+    ramsar_sites = sites.filter(is_ramsar_site=True).count()
+    
+    # Get unique regions for filters
+    regions = sites.values_list('region', flat=True).distinct().exclude(region__isnull=True)
+    
     context = {
         'sites': sites,
+        'total_sites': total_sites,
+        'total_regions': total_regions,
+        'ramsar_sites': ramsar_sites,
+        'regions': regions,
     }
     return render(request, 'core/map.html', context)
 

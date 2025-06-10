@@ -1,92 +1,131 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Home - GeoWetlands Mauritania{% endblock %}
+{% block title %}Accueil - GeoWetlands Mauritania{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1 data-aos="fade-up">GeoWetlands Mauritania</h1>
-        <p data-aos="fade-up" data-aos-delay="200">A comprehensive database and monitoring system for Mauritania's wetlands, supporting conservation efforts and sustainable management.</p>
-        <div data-aos="fade-up" data-aos-delay="400">
-            <a href="{% url 'map' %}" class="btn btn-primary btn-lg">Explore Map</a>
-            <a href="{% url 'wetland_sites' %}" class="btn btn-outline-light btn-lg">View Wetland Sites</a>
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="hero-content">
+                    <h1 class="display-3 fw-bold mb-4" data-aos="fade-up">
+                        GeoWetlands Mauritania
+                    </h1>
+                    <p class="lead mb-5" data-aos="fade-up" data-aos-delay="200">
+                        Plateforme complète de surveillance et de gestion des zones humides mauritaniennes, 
+                        soutenant les efforts de conservation et la gestion durable des écosystèmes aquatiques.
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="{% url 'map' %}" class="btn btn-primary btn-lg me-3 mb-3">
+                            <i class="fas fa-map-marked-alt"></i> Explorer la Carte
+                        </a>
+                        <a href="{% url 'wetland_sites' %}" class="btn btn-outline-light btn-lg mb-3">
+                            <i class="fas fa-tint"></i> Sites de Zones Humides
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="stat-number counter-value" data-count="{{ total_sites }}">0</div>
+                    <div class="stat-label">Zones Humides</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-number counter-value" data-count="4">0</div>
+                    <div class="stat-label">Sites Ramsar</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="stat-number counter-value" data-count="{{ total_species }}">0</div>
+                    <div class="stat-label">Espèces Répertoriées</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-number counter-value" data-count="1240600">0</div>
+                    <div class="stat-label">Hectares Protégés</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Features Section -->
-<section class="features-section section-padding">
+<section class="section-padding">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <h2>Discover Our Platform</h2>
-            <p>GeoWetlands Mauritania provides comprehensive tools and data for wetland conservation and management.</p>
+            <h2>Découvrez Notre Plateforme</h2>
+            <p>GeoWetlands Mauritania fournit des outils et données complètes pour la conservation et la gestion des zones humides.</p>
         </div>
         
         <div class="row">
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marked-alt"></i>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 text-center">
+                    <div class="card-body p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-map-marked-alt fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="card-title">Cartographie Interactive</h4>
+                        <p class="card-text">Explorez les zones humides mauritaniennes grâce à notre système de cartographie interactive avec informations détaillées.</p>
+                        <a href="{% url 'map' %}" class="btn btn-primary">
+                            <i class="fas fa-arrow-right"></i> Explorer
+                        </a>
                     </div>
-                    <h3 class="feature-title">Interactive Mapping</h3>
-                    <p>Explore Mauritania's wetlands through our interactive mapping system with detailed site information.</p>
                 </div>
             </div>
             
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 text-center">
+                    <div class="card-body p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-leaf fa-3x text-success"></i>
+                        </div>
+                        <h4 class="card-title">Base de Données Biodiversité</h4>
+                        <p class="card-text">Accédez aux données complètes sur les espèces des zones humides mauritaniennes, incluant leur statut de conservation.</p>
+                        <a href="{% url 'species_list' %}" class="btn btn-success">
+                            <i class="fas fa-arrow-right"></i> Découvrir
+                        </a>
                     </div>
-                    <h3 class="feature-title">Biodiversity Database</h3>
-                    <p>Access comprehensive data on species found in Mauritanian wetlands, including conservation status.</p>
                 </div>
             </div>
             
-            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 text-center">
+                    <div class="card-body p-4">
+                        <div class="feature-icon mb-3">
+                            <i class="fas fa-chart-bar fa-3x text-info"></i>
+                        </div>
+                        <h4 class="card-title">Surveillance & Analyses</h4>
+                        <p class="card-text">Outils de surveillance environnementale et analyses pour soutenir la prise de décision en conservation.</p>
+                        <a href="{% url 'map' %}" class="btn btn-info">
+                            <i class="fas fa-arrow-right"></i> Analyser
+                        </a>
                     </div>
-                    <h3 class="feature-title">Conservation Tracking</h3>
-                    <p>Monitor threats and conservation measures implemented across wetland sites.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-box">
-                    <span class="stat-number counter-value" data-count="{{ total_sites }}">0</span>
-                    <span class="stat-label">Wetland Sites</span>
-                </div>
-            </div>
-            
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-box">
-                    <span class="stat-number counter-value" data-count="{{ total_species }}">0</span>
-                    <span class="stat-label">Species Recorded</span>
-                </div>
-            </div>
-            
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-box">
-                    <span class="stat-number counter-value" data-count="5">0</span>
-                    <span class="stat-label">Regions Covered</span>
-                </div>
-            </div>
-            
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="stat-box">
-                    <span class="stat-number counter-value" data-count="12">0</span>
-                    <span class="stat-label">Conservation Projects</span>
                 </div>
             </div>
         </div>
@@ -94,143 +133,87 @@
 </section>
 
 <!-- Featured Sites Section -->
-<section class="section-padding">
+<section class="section-padding bg-light">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <h2>Featured Wetland Sites</h2>
-            <p>Discover some of Mauritania's most important wetland ecosystems</p>
+            <h2><i class="fas fa-star text-warning"></i> Sites Prioritaires</h2>
+            <p>Découvrez les écosystèmes de zones humides les plus importants de Mauritanie</p>
         </div>
         
         <div class="row">
             {% for site in featured_sites %}
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:100 }}">
-                    <div class="card h-100">
+            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:100 }}">
+                <div class="card h-100 {% if site.is_ramsar_site %}ramsar-site{% endif %}">
+                    <div class="position-relative">
                         <div class="card-img-top">
-                            {% if site.image %}
-                                <img src="{{ site.image.url }}" alt="{{ site.name }}" class="img-fluid">
+                            {% if site.is_ramsar_site %}
+                                <i class="fas fa-star"></i>
                             {% else %}
-                                <div class="d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
-                                    <i class="fas fa-water fa-3x text-primary"></i>
-                                </div>
+                                <i class="fas fa-tint"></i>
                             {% endif %}
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ site.name }}</h5>
-                            <p class="card-text">
-                                <i class="fas fa-map-marker-alt text-primary"></i> {{ site.region }}{% if site.commune %}, {{ site.commune }}{% endif %}
-                            </p>
-                            <p class="card-text">
-                                {% if site.description_ecological %}
-                                    {{ site.description_ecological|truncatechars:100 }}
-                                {% else %}
-                                    A significant wetland site in Mauritania with important ecological value.
-                                {% endif %}
-                            </p>
-                            <a href="{% url 'wetland_site_detail' site.id %}" class="btn btn-primary">View Details</a>
+                        {% if site.is_ramsar_site %}
+                            <span class="ramsar-badge">
+                                <i class="fas fa-star"></i> Site Ramsar
+                            </span>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ site.name }}</h5>
+                        <p class="card-text">
+                            <i class="fas fa-map-marker-alt text-primary"></i> 
+                            <strong>Wilaya:</strong> {{ site.region|default:"N/A" }}
+                            {% if site.commune %}
+                                <br><i class="fas fa-building text-secondary"></i> 
+                                <strong>Commune:</strong> {{ site.commune }}
+                            {% endif %}
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="{% url 'wetland_site_detail' site.id %}" class="btn btn-primary btn-sm flex-fill">
+                                <i class="fas fa-info-circle"></i> Détails
+                            </a>
+                            <a href="{% url 'map' %}" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-map"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
             {% empty %}
-                <div class="col-12 text-center">
-                    <p>No featured sites available at the moment.</p>
-                </div>
+            <div class="col-12 text-center">
+                <p class="text-muted">Aucun site disponible pour le moment.</p>
+            </div>
             {% endfor %}
         </div>
         
         <div class="text-center mt-4" data-aos="fade-up">
-            <a href="{% url 'wetland_sites' %}" class="btn btn-outline-primary btn-lg">View All Sites</a>
-        </div>
-    </div>
-</section>
-
-<!-- Biodiversity Section -->
-<section class="section-padding bg-light">
-    <div class="container">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Biodiversity Overview</h2>
-            <p>Explore the rich biodiversity of Mauritanian wetlands</p>
-        </div>
-        
-        <div class="row">
-            {% for group in species_counts %}
-                <div class="col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:100 }}">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="fas {{ group.icon }}"></i>
-                        </div>
-                        <h3 class="feature-title">{{ group.name }}</h3>
-                        <p><strong>{{ group.count }}</strong> species recorded</p>
-                        <a href="{% url 'species_list' %}?group={{ group.name }}" class="btn btn-sm btn-outline-primary">View Species</a>
-                    </div>
-                </div>
-            {% empty %}
-                <div class="col-12 text-center">
-                    <p>No species data available at the moment.</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Map Preview Section -->
-<section class="section-padding">
-    <div class="container">
-        <div class="section-title" data-aos="fade-up">
-            <h2>Interactive Map</h2>
-            <p>Explore Mauritanian wetlands geographically</p>
-        </div>
-        
-        <div class="map-container" data-aos="fade-up">
-            <div id="map"></div>
-        </div>
-        
-        <div class="text-center mt-4" data-aos="fade-up">
-            <a href="{% url 'map' %}" class="btn btn-primary btn-lg">Open Full Map</a>
+            <a href="{% url 'wetland_sites' %}" class="btn btn-primary btn-lg">
+                <i class="fas fa-eye"></i> Voir Tous les Sites
+            </a>
         </div>
     </div>
 </section>
 
 <!-- Call to Action Section -->
-<section class="section-padding bg-light">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8 mb-4 mb-lg-0" data-aos="fade-up">
-                <h2>Join Our Conservation Efforts</h2>
-                <p class="lead">Help us protect and preserve Mauritania's valuable wetland ecosystems for future generations.</p>
-            </div>
-            <div class="col-lg-4 text-lg-end" data-aos="fade-up" data-aos-delay="200">
-                <a href="{% url 'about' %}" class="btn btn-primary btn-lg">Learn More</a>
+<section class="section-padding bg-primary text-white">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4" data-aos="fade-up">Contribuez à la Conservation</h2>
+                <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">
+                    Rejoignez nos efforts pour protéger et préserver les précieux écosystèmes de zones humides de Mauritanie pour les générations futures.
+                </p>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a href="{% url 'about' %}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-info-circle"></i> En Savoir Plus
+                    </a>
+                    <a href="{% url 'map' %}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-map-marked-alt"></i> Explorer Maintenant
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
 
-{% block extra_js %}
-<script>
-    // Initialize map with site markers if available
-    document.addEventListener('DOMContentLoaded', function() {
-        // Create a hidden element with site data for the map
-        const sitesData = [
-            {% for site in featured_sites %}
-                {% if site.geometry %}
-                {
-                    id: {{ site.id }},
-                    name: "{{ site.name }}",
-                    region: "{{ site.region|default:'N/A' }}",
-                    commune: "{{ site.commune|default:'N/A' }}",
-                    geometry: {{ site.geometry.json|safe }}
-                },
-                {% endif %}
-            {% endfor %}
-        ];
-        
-        // Create a hidden element to store the data
-        const sitesDataElement = document.createElement('div');
-        sitesDataElement.id = 'sites-data';
-        sitesDataElement.setAttribute('data-sites', JSON.stringify(sitesData));
-        sitesDataElement.style.display = 'none';
-        document.body.appendChild(sitesDataElement);
-    });
-</script>
-{% endblock %}

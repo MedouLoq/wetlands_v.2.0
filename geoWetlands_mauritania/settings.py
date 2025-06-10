@@ -142,6 +142,9 @@ LEAFLET_CONFIG = {
     ],
 }
 
+# SpatiaLite Configuration
+SPATIALITE_LIBRARY_PATH = '/usr/lib/x86_64-linux-gnu/mod_spatialite.so'
+
 # Login/Logout URLs
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'

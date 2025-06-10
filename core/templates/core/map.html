@@ -1,55 +1,24 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
-{% block title %}Interactive Map - GeoWetlands Mauritania{% endblock %}
+{% block title %}Carte Interactive - GeoWetlands Mauritania{% endblock %}
 
 {% block extra_css %}
-<style>
-    /* Full-height map for this page */
-    .map-container {
-        height: calc(100vh - 200px);
-        min-height: 600px;
-    }
-    
-    /* Map legend styles */
-    .map-legend {
-        background: white;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        max-width: 300px;
-    }
-    
-    .legend-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 8px;
-    }
-    
-    .legend-color {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    
-    /* Map controls */
-    .map-controls {
-        background: white;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        margin-bottom: 15px;
-    }
-</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
+<link rel="stylesheet" href="{% static 'core/css/enhanced-map.css' %}" />
 {% endblock %}
 
 {% block content %}
 <!-- Header Section -->
 <section class="detail-header">
     <div class="container">
-        <h1 class="detail-title" data-aos="fade-up">Interactive Map</h1>
-        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">Explore Mauritanian wetlands geographically</p>
+        <h1 class="detail-title" data-aos="fade-up">
+            <i class="fas fa-map-marked-alt"></i> Carte Interactive Avancée
+        </h1>
+        <p class="detail-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Explorez les zones humides mauritaniennes avec des outils géographiques avancés
+        </p>
     </div>
 </section>
 
@@ -57,17 +26,47 @@
 <section class="container mb-4">
     <div class="map-controls" data-aos="fade-up">
         <div class="row">
-            <div class="col-md-6 mb-3 mb-md-0">
-                <label for="region-filter" class="form-label">Filter by Region</label>
-                <select id="region-filter" class="form-select">
-                    <option value="all">All Regions</option>
+            <div class="col-md-4 mb-3">
+                <label for="region-filter" class="form-label">
+                    <i class="fas fa-map-marker-alt"></i> Filtrer par Wilaya
+                </label>
+                <select id="region-filter" class="form-select" onchange="filterByRegion(this.value)">
+                    <option value="all">Toutes les Wilayas</option>
                     <!-- Regions will be populated by JavaScript -->
                 </select>
             </div>
-            <div class="col-md-6">
-                <label for="site-search" class="form-label">Search Sites</label>
-                <input type="text" id="site-search" class="form-control" placeholder="Enter site name...">
+            <div class="col-md-4 mb-3">
+                <label for="type-filter" class="form-label">
+                    <i class="fas fa-filter"></i> Type de Site
+                </label>
+                <select id="type-filter" class="form-select" onchange="filterByType(this.value)">
+                    <option value="all">Tous les Sites</option>
+                    <option value="ramsar">Sites Ramsar Uniquement</option>
+                    <option value="wetland">Zones Humides Locales</option>
+                </select>
             </div>
+            <div class="col-md-4 mb-3">
+                <label for="site-search" class="form-label">
+                    <i class="fas fa-search"></i> Recherche Rapide
+                </label>
+                <input type="text" id="site-search" class="form-control" placeholder="Nom du site ou wilaya...">
+            </div>
+        </div>
+        
+        <!-- Quick Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="showAllSites()">
+                <i class="fas fa-globe"></i> Tous
+            </button>
+            <button class="filter-btn" onclick="showRamsarOnly()">
+                <i class="fas fa-star"></i> Sites Ramsar
+            </button>
+            <button class="filter-btn" onclick="showByImportance()">
+                <i class="fas fa-exclamation-triangle"></i> Prioritaires
+            </button>
+            <button class="filter-btn" onclick="toggleHeatmap()">
+                <i class="fas fa-fire"></i> Carte de Chaleur
+            </button>
         </div>
     </div>
 </section>
@@ -75,33 +74,55 @@
 <!-- Map Container -->
 <section class="container mb-5">
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-12">
             <div class="map-container" data-aos="fade-up">
                 <div id="map"></div>
+                <div id="map-loading" class="map-loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Chargement de la carte...</p>
+                </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="map-legend" data-aos="fade-up" data-aos-delay="200">
-                <h5>Legend</h5>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #1a7a4c;"></div>
-                    <span>Wetland Site</span>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="container mb-5">
+    <div class="row text-center" data-aos="fade-up">
+        <div class="col-md-3 col-6 mb-4">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #0d6efd;"></div>
-                    <span>Water Body</span>
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">Sites Ramsar</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-tint"></i>
                 </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background-color: #ffc107;"></div>
-                    <span>Protected Area</span>
+                <div class="stat-number" data-count="{{ total_sites }}">0</div>
+                <div class="stat-label">Zones Humides</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-map"></i>
                 </div>
-                
-                <hr>
-                
-                <h5>Site Information</h5>
-                <div id="site-info">
-                    <p class="text-muted">Click on a site to view details</p>
+                <div class="stat-number" data-count="{{ total_regions }}">0</div>
+                <div class="stat-label">Wilayas Couvertes</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-leaf"></i>
                 </div>
+                <div class="stat-number" data-count="1240600">0</div>
+                <div class="stat-label">Hectares Protégés</div>
             </div>
         </div>
     </div>
@@ -110,25 +131,71 @@
 <!-- Featured Sites Section -->
 <section class="container mb-5">
     <div class="section-title" data-aos="fade-up">
-        <h2>Featured Wetland Sites</h2>
-        <p>Discover some of Mauritania's most important wetland ecosystems</p>
+        <h2><i class="fas fa-star"></i> Sites Prioritaires</h2>
+        <p>Découvrez les écosystèmes de zones humides les plus importants de Mauritanie</p>
     </div>
     
     <div class="row" id="featured-sites">
         <!-- Sites will be populated by JavaScript -->
         <div class="col-12 text-center py-4">
             <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
+                <span class="visually-hidden">Chargement...</span>
             </div>
-            <p class="mt-2">Loading sites...</p>
+            <p class="mt-2">Chargement des sites...</p>
+        </div>
+    </div>
+</section>
+
+<!-- PowerBI Dashboard Placeholder -->
+<section class="container mb-5">
+    <div class="dashboard-placeholder" data-aos="fade-up">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-chart-bar"></i> Tableau de Bord PowerBI
+                        </h3>
+                    </div>
+                    <div class="card-body text-center py-5">
+                        <i class="fas fa-chart-line fa-4x text-muted mb-3"></i>
+                        <h4>Tableau de Bord Analytique</h4>
+                        <p class="text-muted">
+                            Espace réservé pour l'intégration du tableau de bord PowerBI.<br>
+                            Analyses avancées et visualisations des données environnementales.
+                        </p>
+                        <div class="placeholder-features">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <i class="fas fa-chart-pie text-primary"></i>
+                                    <h6>Analyses Statistiques</h6>
+                                </div>
+                                <div class="col-md-4">
+                                    <i class="fas fa-trending-up text-success"></i>
+                                    <h6>Tendances Temporelles</h6>
+                                </div>
+                                <div class="col-md-4">
+                                    <i class="fas fa-exclamation-triangle text-warning"></i>
+                                    <h6>Alertes Environnementales</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 {% endblock %}
 
 {% block extra_js %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>
+<script src="{% static 'core/js/enhanced-map.js' %}"></script>
+
 <script>
-    // Initialize map with site markers
+    // Initialize enhanced map with site data
     document.addEventListener('DOMContentLoaded', function() {
         // Create a hidden element with site data for the map
         const sitesData = [
@@ -136,10 +203,11 @@
                 {% if site.geometry %}
                 {
                     id: {{ site.id }},
-                    name: "{{ site.name }}",
-                    region: "{{ site.region|default:'N/A' }}",
-                    commune: "{{ site.commune|default:'N/A' }}",
-                    geometry: {{ site.geometry.json|safe }}
+                    name: "{{ site.name|escapejs }}",
+                    region: "{{ site.region|default:'N/A'|escapejs }}",
+                    commune: "{{ site.commune|default:'N/A'|escapejs }}",
+                    geometry: {{ site.geometry.json|safe }},
+                    isRamsar: {{ site.is_ramsar_site|yesno:"true,false" }}
                 },
                 {% endif %}
             {% endfor %}
@@ -152,101 +220,170 @@
         sitesDataElement.style.display = 'none';
         document.body.appendChild(sitesDataElement);
         
+        // Show loading
+        document.getElementById('map-loading').style.display = 'block';
+        
+        // Initialize the enhanced map
+        setTimeout(() => {
+            initializeMap();
+            document.getElementById('map-loading').style.display = 'none';
+        }, 500);
+        
         // Populate regions dropdown
         const regionFilter = document.getElementById('region-filter');
-        const regions = [...new Set(sitesData.map(site => site.region).filter(Boolean))];
+        const regions = [...new Set(sitesData.map(site => site.region).filter(region => region && region !== 'N/A'))];
         
-        regions.forEach(region => {
+        regions.sort().forEach(region => {
             const option = document.createElement('option');
             option.value = region;
             option.textContent = region;
             regionFilter.appendChild(option);
         });
         
-        // Filter sites by region
-        regionFilter.addEventListener('change', function() {
-            const selectedRegion = this.value;
-            const markers = window.siteMarkers || [];
-            
-            markers.forEach(marker => {
-                const site = marker._site;
-                if (selectedRegion === 'all' || site.region === selectedRegion) {
-                    marker.addTo(map);
-                } else {
-                    marker.remove();
-                }
-            });
-            
-            // Update featured sites
-            updateFeaturedSites(selectedRegion);
-        });
-        
         // Search functionality
         const siteSearch = document.getElementById('site-search');
         siteSearch.addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
-            const markers = window.siteMarkers || [];
+            if (searchTerm.length < 2) {
+                filterByRegion('all');
+                return;
+            }
             
-            markers.forEach(marker => {
-                const site = marker._site;
-                if (searchTerm === '' || site.name.toLowerCase().includes(searchTerm)) {
-                    marker.addTo(map);
-                } else {
-                    marker.remove();
-                }
-            });
+            // Filter markers based on search
+            if (window.siteMarkers) {
+                window.siteMarkers.forEach(marker => {
+                    const site = marker._site;
+                    const matches = site.name.toLowerCase().includes(searchTerm) ||
+                                  (site.region && site.region.toLowerCase().includes(searchTerm)) ||
+                                  (site.commune && site.commune.toLowerCase().includes(searchTerm));
+                    
+                    if (matches) {
+                        if (marker._isRamsar) {
+                            overlayLayers["Sites Ramsar"].addLayer(marker);
+                        } else {
+                            overlayLayers["Zones Humides"].addLayer(marker);
+                        }
+                    } else {
+                        overlayLayers["Sites Ramsar"].removeLayer(marker);
+                        overlayLayers["Zones Humides"].removeLayer(marker);
+                    }
+                });
+            }
         });
         
         // Populate featured sites
-        function updateFeaturedSites(region = 'all') {
+        function updateFeaturedSites() {
             const featuredSitesContainer = document.getElementById('featured-sites');
-            const filteredSites = region === 'all' 
-                ? sitesData.slice(0, 6) 
-                : sitesData.filter(site => site.region === region).slice(0, 6);
+            const ramsarSites = sitesData.filter(site => site.isRamsar);
+            const otherSites = sitesData.filter(site => !site.isRamsar).slice(0, 2);
+            const featuredSites = [...ramsarSites, ...otherSites];
             
             let sitesHTML = '';
             
-            if (filteredSites.length === 0) {
-                sitesHTML = `
-                    <div class="col-12 text-center py-4">
-                        <i class="fas fa-map-marker-alt fa-3x text-muted mb-3"></i>
-                        <h3>No sites found</h3>
-                        <p>No wetland sites found in this region.</p>
-                    </div>
-                `;
-            } else {
-                filteredSites.forEach((site, index) => {
-                    sitesHTML += `
-                        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="${100 + (index * 100)}">
-                            <div class="card h-100">
-                                <div class="card-img-top">
-                                    <div class="d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
-                                        <i class="fas fa-water fa-3x text-primary"></i>
-                                    </div>
+            featuredSites.forEach((site, index) => {
+                const badgeClass = site.isRamsar ? 'badge-ramsar' : 'badge-wetland';
+                const badgeText = site.isRamsar ? 'Site Ramsar' : 'Zone Humide';
+                const iconClass = site.isRamsar ? 'fas fa-star' : 'fas fa-tint';
+                
+                sitesHTML += `
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="${100 + (index * 100)}">
+                        <div class="card h-100 site-card ${site.isRamsar ? 'ramsar-card' : 'wetland-card'}">
+                            <div class="card-img-top position-relative">
+                                <div class="d-flex align-items-center justify-content-center bg-gradient" style="height: 200px;">
+                                    <i class="${iconClass} fa-4x text-white"></i>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">${site.name}</h5>
-                                    <p class="card-text">
-                                        <i class="fas fa-map-marker-alt text-primary"></i> ${site.region || 'N/A'}${site.commune ? ', ' + site.commune : ''}
-                                    </p>
-                                    <a href="/wetland-sites/${site.id}/" class="btn btn-primary">View Details</a>
+                                <span class="badge ${badgeClass} position-absolute top-0 end-0 m-2">
+                                    <i class="${iconClass}"></i> ${badgeText}
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">${site.name}</h5>
+                                <p class="card-text">
+                                    <i class="fas fa-map-marker-alt text-primary"></i> 
+                                    ${site.region}${site.commune && site.commune !== 'N/A' ? ', ' + site.commune : ''}
+                                </p>
+                                <div class="d-flex gap-2">
+                                    <a href="/wetland-sites/${site.id}/" class="btn btn-primary btn-sm flex-fill">
+                                        <i class="fas fa-info-circle"></i> Détails
+                                    </a>
+                                    <button onclick="zoomToSite(${site.geometry.coordinates[1]}, ${site.geometry.coordinates[0]})" 
+                                            class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    `;
-                });
-            }
+                    </div>
+                `;
+            });
             
             featuredSitesContainer.innerHTML = sitesHTML;
-            
-            // Re-initialize AOS for new elements
             AOS.refresh();
         }
         
         // Initial population of featured sites
-        setTimeout(() => {
-            updateFeaturedSites();
-        }, 1000);
+        setTimeout(updateFeaturedSites, 1000);
+        
+        // Initialize counter animations
+        const counters = document.querySelectorAll('.stat-number[data-count]');
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            let current = 0;
+            const increment = target / 50;
+            
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    counter.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            };
+            
+            setTimeout(updateCounter, 1000);
+        });
     });
+    
+    // Global filter functions
+    function showAllSites() {
+        filterByType('all');
+        updateFilterButtons(0);
+    }
+    
+    function showRamsarOnly() {
+        filterByType('ramsar');
+        updateFilterButtons(1);
+    }
+    
+    function showByImportance() {
+        filterByType('ramsar');
+        updateFilterButtons(2);
+    }
+    
+    let heatmapVisible = false;
+    function toggleHeatmap() {
+        if (window.overlayLayers && window.overlayLayers["Carte de Chaleur"]) {
+            if (heatmapVisible) {
+                map.removeLayer(window.overlayLayers["Carte de Chaleur"]);
+                heatmapVisible = false;
+            } else {
+                window.overlayLayers["Carte de Chaleur"].addTo(map);
+                heatmapVisible = true;
+            }
+            updateFilterButtons(3);
+        }
+    }
+    
+    function updateFilterButtons(activeIndex) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach((btn, index) => {
+            if (index === activeIndex || (activeIndex === 3 && heatmapVisible)) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
 </script>
 {% endblock %}

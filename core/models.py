@@ -138,6 +138,7 @@ class WetlandSite(models.Model):
     area_hectares = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     designation_date = models.DateField(null=True, blank=True)
     ramsar_criteria_met = models.TextField(null=True, blank=True)
+    is_ramsar_site = models.BooleanField(default=False, verbose_name="Site Ramsar")
     description_ecological = models.TextField(null=True, blank=True)
     description_physical = models.TextField(null=True, blank=True)
     hydrology_summary = models.TextField(null=True, blank=True)
@@ -165,10 +166,16 @@ class WetlandSite(models.Model):
         db_table = "wetland_sites"
         verbose_name = "Wetland Site"
         verbose_name_plural = "Wetland Sites"
-        ordering = ["name"]
+        ordering = ["-is_ramsar_site", "name"]  # Ramsar sites first, then alphabetical
 
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        # Automatically mark as Ramsar site if code starts with RAMSAR
+        if self.code and self.code.startswith('RAMSAR'):
+            self.is_ramsar_site = True
+        super().save(*args, **kwargs)
 
 # 8. SiteWetlandType (Through Model for WetlandSite <-> WetlandType)
 class SiteWetlandType(models.Model):

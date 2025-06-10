@@ -1,4 +1,4 @@
-#!/home/loq/geoWetlands_mauritania/venv/bin/python3
+#!/home/loq/mr_wetlands/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
