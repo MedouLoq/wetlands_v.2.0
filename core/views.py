@@ -148,12 +148,28 @@ def species_detail(request, species_id):
     """Species detail page"""
     species = get_object_or_404(Species.objects.prefetch_related('images'), id=species_id)
     
-    # Get sites where this species is found
-    sites = species.wetland_sites.all()
+    # Get sites where this species is found and filter out those without geometry
+    sites = species.wetland_sites.exclude(geometry__isnull=True)
+    
+    # Serialize site geometries to GeoJSON
+    sites_geojson = []
+    for site in sites:
+        if site.geometry:
+            sites_geojson.append({
+                "type": "Feature",
+                "properties": {
+                    "name": site.name,
+                    "id": site.id,
+                    "region": site.region,
+                    "is_ramsar_site": site.is_ramsar_site
+                },
+                "geometry": json.loads(site.geometry.geojson)
+            })
     
     context = {
         'species': species,
         'sites': sites,
+        'sites_geojson': json.dumps(sites_geojson)
     }
     return render(request, 'core/species_detail.html', context)
 
