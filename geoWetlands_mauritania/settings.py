@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-geowetlands-mauritania-development-key-2025'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mrwetlands.pythonanywhere.com','127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [

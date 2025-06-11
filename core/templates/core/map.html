@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" />
 <link rel="stylesheet" href="{% static 'core/css/enhanced-map.css' %}" />
+<link rel="stylesheet" href="{% static 'core/css/dashboard.css' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -128,55 +129,292 @@
     </div>
 </section>
 
-<!-- Featured Sites Section -->
-<section class="container mb-5">
-    <div class="section-title" data-aos="fade-up">
-        <h2><i class="fas fa-star"></i> Sites Prioritaires</h2>
-        <p>Découvrez les écosystèmes de zones humides les plus importants de Mauritanie</p>
-    </div>
-    
-    <div class="row" id="featured-sites">
-        <!-- Sites will be populated by JavaScript -->
-        <div class="col-12 text-center py-4">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Chargement...</span>
-            </div>
-            <p class="mt-2">Chargement des sites...</p>
-        </div>
-    </div>
-</section>
+
+
 
 <!-- PowerBI Dashboard Placeholder -->
 <section class="container mb-5">
-    <div class="dashboard-placeholder" data-aos="fade-up">
+    <div class="dashboard-container" data-aos="fade-up">
         <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h3 class="card-title mb-0">
-                            <i class="fas fa-chart-bar"></i> Tableau de Bord PowerBI
-                        </h3>
+                <div class="card dashboard-card">
+                    <div class="card-header dashboard-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h3 class="dashboard-title mb-0">
+                                <i class="fas fa-chart-line"></i> Tableau de Bord Analytique Hybride
+                            </h3>
+                            <p class="dashboard-subtitle mb-0">Analyses fixes et exploration dynamique des écosystèmes mauritaniens</p>
+                        </div>
+                        <div class="dashboard-controls">
+                            <button class="btn btn-outline-light btn-sm me-2" onclick="dashboard.refreshDashboard()" id="refreshBtn">
+                                <i class="fas fa-sync-alt"></i> Actualiser
+                            </button>
+                            <button class="btn btn-light btn-sm" onclick="dashboard.toggleFullscreen()" id="fullscreenBtn">
+                                <i class="fas fa-expand"></i> Plein écran
+                            </button>
+                        </div>
                     </div>
-                    <div class="card-body text-center py-5">
-                        <i class="fas fa-chart-line fa-4x text-muted mb-3"></i>
-                        <h4>Tableau de Bord Analytique</h4>
-                        <p class="text-muted">
-                            Espace réservé pour l'intégration du tableau de bord PowerBI.<br>
-                            Analyses avancées et visualisations des données environnementales.
-                        </p>
-                        <div class="placeholder-features">
+                    
+                    <div class="card-body dashboard-body p-0">
+                        
+                        <!-- ============================================================ -->
+                        <!-- SECTION STATIQUE - GRAPHIQUES FIXES -->
+                        <!-- ============================================================ -->
+                        <div class="static-charts-section">
+                            <div class="section-title">
+                                <h3><i class="fas fa-chart-area text-gradient"></i> Analyses Principales</h3>
+                                <p>Visualisations essentielles des données environnementales</p>
+                            </div>
+                            
+                            <!-- Statistiques de résumé -->
+                            <div class="row mb-4">
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                                    <div class="chart-card" style="--chart-color: linear-gradient(135deg, #667eea, #764ba2);">
+                                        <div class="text-center">
+                                            <div class="display-4 font-weight-bold text-primary" id="totalSites">0</div>
+                                            <h6 class="text-muted">Sites de Zones Humides</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                                    <div class="chart-card" style="--chart-color: linear-gradient(135deg, #f093fb, #f5576c);">
+                                        <div class="text-center">
+                                            <div class="display-4 font-weight-bold text-warning" id="ramsarSites">0</div>
+                                            <h6 class="text-muted">Sites Ramsar</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                                    <div class="chart-card" style="--chart-color: linear-gradient(135deg, #11998e, #38ef7d);">
+                                        <div class="text-center">
+                                            <div class="display-4 font-weight-bold text-success" id="totalSpecies">0</div>
+                                            <h6 class="text-muted">Espèces Recensées</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                                    <div class="chart-card" style="--chart-color: linear-gradient(135deg, #4facfe, #00f2fe);">
+                                        <div class="text-center">
+                                            <div class="display-4 font-weight-bold text-info" id="totalObservations">0</div>
+                                            <h6 class="text-muted">Observations Totales</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Grille des graphiques fixes -->
+                            <div class="chart-grid">
+                                <!-- Évolution des espèces -->
+                                <div class="chart-card evolution">
+                                    <div class="chart-header">
+                                        <h5 class="chart-title">
+                                            <i class="fas fa-chart-line"></i> Évolution de la Biodiversité
+                                        </h5>
+                                        <div class="chart-controls">
+                                            <select class="form-select form-select-sm" onchange="dashboard.updateBiodiversityChart(this.value)">
+                                                <option value="monthly">Mensuel</option>
+                                                <option value="yearly" selected>Annuel</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="chart-container">
+                                        <canvas id="speciesEvolutionChart"></canvas>
+                                        <div class="chart-loading" style="display: none;">
+                                            <div class="chart-spinner"></div>
+                                            <p>Chargement...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Distribution par région -->
+                                <div class="chart-card distribution">
+                                    <div class="chart-header">
+                                        <h5 class="chart-title">
+                                            <i class="fas fa-map"></i> Distribution par Wilaya
+                                        </h5>
+                                    </div>
+                                    <div class="chart-container">
+                                        <canvas id="sitesDistributionChart"></canvas>
+                                        <div class="chart-loading" style="display: none;">
+                                            <div class="chart-spinner"></div>
+                                            <p>Chargement...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Répartition des espèces -->
+                                <div class="chart-card species fullscreen-only">
+                                    <div class="chart-header">
+                                        <h5 class="chart-title">
+                                            <i class="fas fa-chart-pie"></i> Groupes Taxonomiques
+                                        </h5>
+                                    </div>
+                                    <div class="chart-container">
+                                        <canvas id="speciesGroupChart"></canvas>
+                                        <div class="chart-loading" style="display: none;">
+                                            <div class="chart-spinner"></div>
+                                            <p>Chargement...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Analyse des menaces -->
+                                <div class="chart-card threats fullscreen-only">
+                                    <div class="chart-header">
+                                        <h5 class="chart-title">
+                                            <i class="fas fa-exclamation-triangle"></i> Menaces Environnementales
+                                        </h5>
+                                    </div>
+                                    <div class="chart-container">
+                                        <canvas id="threatsChart"></canvas>
+                                        <div class="chart-loading" style="display: none;">
+                                            <div class="chart-spinner"></div>
+                                            <p>Chargement...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- État de conservation (pleine largeur) -->
                             <div class="row">
-                                <div class="col-md-4">
-                                    <i class="fas fa-chart-pie text-primary"></i>
-                                    <h6>Analyses Statistiques</h6>
+                                <div class="col-12">
+                                    <div class="chart-card conservation fullscreen-only">
+                                        <div class="chart-header">
+                                            <h5 class="chart-title">
+                                                <i class="fas fa-leaf"></i> État de Conservation par Wilaya
+                                            </h5>
+                                        </div>
+                                        <div class="chart-container" style="height: 250px;">
+                                            <canvas id="conservationChart"></canvas>
+                                            <div class="chart-loading" style="display: none;">
+                                                <div class="chart-spinner"></div>
+                                                <p>Chargement...</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <i class="fas fa-trending-up text-success"></i>
-                                    <h6>Tendances Temporelles</h6>
+                            </div>
+                        </div>
+                        
+                        <!-- ============================================================ -->
+                        <!-- SECTION DYNAMIQUE - EXPLORATION INTERACTIVE -->
+                        <!-- ============================================================ -->
+                        <div class="dynamic-section">
+                            <div class="data-explorer">
+                                <div class="explorer-header">
+                                    <h3 class="explorer-title">
+                                        <i class="fas fa-search-plus text-gradient"></i> Exploration Dynamique des Données
+                                    </h3>
+                                    <p class="explorer-subtitle">
+                                        Sélectionnez vos données, croisez les informations et générez vos propres visualisations
+                                    </p>
                                 </div>
-                                <div class="col-md-4">
-                                    <i class="fas fa-exclamation-triangle text-warning"></i>
-                                    <h6>Alertes Environnementales</h6>
+                                
+                                <!-- Sélection des sources de données -->
+                                <div class="mb-4">
+                                    <h5><i class="fas fa-database"></i> 1. Choisissez votre source de données</h5>
+                                    <div class="data-source-grid" id="dataSourceGrid">
+                                        <!-- Les sources seront chargées dynamiquement -->
+                                        <div class="text-center py-4">
+                                            <div class="spinner-border text-primary" role="status">
+                                                <span class="visually-hidden">Chargement...</span>
+                                            </div>
+                                            <p class="mt-2">Chargement des sources de données...</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Configuration des champs -->
+                                <div class="data-selection-panel">
+                                    <div class="selection-group">
+                                        <label class="selection-label">
+                                            <i class="fas fa-arrows-alt-h"></i> Axe X (Dimension)
+                                        </label>
+                                        <select class="selection-control" id="xFieldSelect" >
+                                            <option value="">-- Sélectionnez d'abord une source --</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="selection-group">
+                                        <label class="selection-label">
+                                            <i class="fas fa-arrows-alt-v"></i> Axe Y (Métrique)
+                                        </label>
+                                        <select class="selection-control" id="yFieldSelect" >
+                                            <option value="">-- Sélectionnez d'abord une source --</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="selection-group">
+                                        <label class="selection-label">
+                                            <i class="fas fa-layer-group"></i> Grouper par (Optionnel)
+                                        </label>
+                                        <select class="selection-control" id="groupBySelect" >
+                                            <option value="">-- Aucun groupement --</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="selection-group">
+                                        <label class="selection-label">
+                                            <i class="fas fa-filter"></i> Filtres (Optionnel)
+                                        </label>
+                                        <input type="text" class="selection-control" id="filterInput" placeholder="Filtres avancés..." >
+                                    </div>
+                                </div>
+                                
+                                <!-- Sélection du type de visualisation -->
+                                <div class="visualization-controls">
+                                    <h5><i class="fas fa-chart-bar"></i> 2. Choisissez votre type de visualisation</h5>
+                                    
+                                    <div class="viz-type-selector">
+                                        <div class="viz-type-btn active" data-type="bar">
+                                            <div class="viz-type-icon"><i class="fas fa-chart-bar"></i></div>
+                                            <div class="viz-type-label">Barres</div>
+                                        </div>
+                                        <div class="viz-type-btn" data-type="line">
+                                            <div class="viz-type-icon"><i class="fas fa-chart-line"></i></div>
+                                            <div class="viz-type-label">Ligne</div>
+                                        </div>
+                                        <div class="viz-type-btn" data-type="pie">
+                                            <div class="viz-type-icon"><i class="fas fa-chart-pie"></i></div>
+                                            <div class="viz-type-label">Secteurs</div>
+                                        </div>
+                                        <div class="viz-type-btn" data-type="doughnut">
+                                            <div class="viz-type-icon"><i class="fas fa-circle-notch"></i></div>
+                                            <div class="viz-type-label">Anneau</div>
+                                        </div>
+                                        <div class="viz-type-btn" data-type="table">
+                                            <div class="viz-type-icon"><i class="fas fa-table"></i></div>
+                                            <div class="viz-type-label">Tableau</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="generate-btn" id="generateVisualization" disabled>
+                                        <i class="fas fa-magic"></i> Générer la Visualisation
+                                    </button>
+                                </div>
+                                
+                                <!-- Résultat dynamique -->
+                                <div class="dynamic-result" id="dynamicResult" style="display: none;">
+                                    <div class="result-header">
+                                        <h5 class="result-title" id="resultTitle">Résultat de l'Exploration</h5>
+                                        <div class="result-actions">
+                                            <button class="action-btn export-btn" data-format="png">
+                                                <i class="fas fa-download"></i> PNG
+                                            </button>
+                                            <button class="action-btn export-btn" data-format="csv">
+                                                <i class="fas fa-file-csv"></i> CSV
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                    <div class="result-content">
+                                        <canvas id="dynamicChart" style="display: none;"></canvas>
+                                        <div id="dynamicTable" style="display: none;"></div>
+                                        <div class="chart-loading" style="display: none;">
+                                            <div class="chart-spinner"></div>
+                                            <p>Génération en cours...</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -189,6 +427,10 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="{% static 'core/js/dashboard.js' %}"></script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js"></script>

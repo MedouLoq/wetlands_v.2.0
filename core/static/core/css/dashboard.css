@@ -1,0 +1,822 @@
+/* CSS pour le Tableau de Bord Hybride - VERSION CORRIGÉE AVEC SCROLL FONCTIONNEL */
+
+/* ============================================================================
+   STYLES GÉNÉRAUX DU TABLEAU DE BORD
+   ============================================================================ */
+
+.dashboard-container {
+    position: relative;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.dashboard-card {
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 35px 100px rgba(0,0,0,0.15);
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-subtitle {
+    opacity: 0.9;
+    font-size: 1rem;
+    margin: 0.5rem 0 0 0;
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-controls {
+    position: relative;
+    z-index: 2;
+}
+
+.dashboard-controls .btn {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dashboard-controls .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ============================================================================
+   SECTION STATIQUE - GRAPHIQUES FIXES
+   ============================================================================ */
+
+.static-charts-section {
+    padding: 2rem;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.chart-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--chart-color, linear-gradient(135deg, #667eea, #764ba2));
+}
+
+.chart-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.chart-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-controls select {
+    border-radius: 20px;
+    border: 2px solid #e9ecef;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.chart-controls select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+.chart-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #7f8c8d;
+}
+
+.chart-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Couleurs spécifiques pour chaque graphique */
+.chart-card.evolution { --chart-color: linear-gradient(135deg, #11998e, #38ef7d); }
+.chart-card.distribution { --chart-color: linear-gradient(135deg, #667eea, #764ba2); }
+.chart-card.species { --chart-color: linear-gradient(135deg, #f093fb, #f5576c); }
+.chart-card.threats { --chart-color: linear-gradient(135deg, #4facfe, #00f2fe); }
+.chart-card.conservation { --chart-color: linear-gradient(135deg, #43e97b, #38f9d7); }
+
+/* ============================================================================
+   SECTION DYNAMIQUE - EXPLORATION INTERACTIVE
+   ============================================================================ */
+
+.dynamic-section {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 1px solid #dee2e6;
+}
+
+.data-explorer {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.explorer-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.explorer-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.explorer-subtitle {
+    color: #7f8c8d;
+    font-size: 1rem;
+}
+
+.data-selection-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.selection-group {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.selection-group:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.selection-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.selection-control {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.selection-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    outline: none;
+}
+
+.data-source-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.data-source-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.data-source-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.data-source-card:hover::before {
+    left: 100%;
+}
+
+.data-source-card.selected {
+    border-color: #667eea;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.data-source-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #667eea;
+}
+
+.data-source-card.selected .data-source-icon {
+    color: white;
+}
+
+.data-source-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.data-source-count {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.visualization-controls {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.viz-type-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.viz-type-btn {
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+}
+
+.viz-type-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.viz-type-btn.active {
+    border-color: #667eea;
+    background: #667eea;
+    color: white;
+}
+
+.viz-type-icon {
+    font-size: 1.5rem;
+}
+
+.viz-type-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.generate-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.generate-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.generate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.dynamic-result {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    margin-top: 2rem;
+    min-height: 400px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.result-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.result-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.action-btn:hover {
+    background: #e9ecef;
+    transform: translateY(-1px);
+}
+
+.result-content {
+    position: relative;
+    min-height: 300px;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.result-table th,
+.result-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.result-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.result-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* ============================================================================
+   MODE PLEIN ÉCRAN - SOLUTION COMPLÈTE POUR LE SCROLL
+   ============================================================================ */
+
+/* Classes pour mode plein écran personnalisé (avec classe CSS) */
+.dashboard-container.fullscreen {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 9999 !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+}
+
+.dashboard-container.fullscreen .dashboard-card {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+
+.dashboard-container.fullscreen .dashboard-header {
+    flex-shrink: 0 !important;
+    border-radius: 0 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    min-height: auto !important;
+}
+
+.dashboard-container.fullscreen .dashboard-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    position: relative !important;
+}
+
+/* Styles pour le mode fullscreen natif du navigateur */
+.dashboard-container:fullscreen {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    overflow: hidden !important;
+}
+
+.dashboard-container:fullscreen .dashboard-card {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+}
+
+.dashboard-container:fullscreen .dashboard-header {
+    flex-shrink: 0 !important;
+    border-radius: 0 !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.dashboard-container:fullscreen .dashboard-body {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    position: relative !important;
+}
+
+/* S'assurer que le contenu à l'intérieur peut déborder naturellement */
+.dashboard-container.fullscreen .static-charts-section,
+.dashboard-container.fullscreen .dynamic-section,
+.dashboard-container:fullscreen .static-charts-section,
+.dashboard-container:fullscreen .dynamic-section {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 2rem !important;
+    display: block !important;
+}
+
+/* Cacher les éléments fullscreen-only par défaut */
+.fullscreen-only {
+    display: none;
+}
+
+/* Afficher les éléments fullscreen-only en mode plein écran */
+.dashboard-container.fullscreen .fullscreen-only,
+.dashboard-container:fullscreen .fullscreen-only {
+    display: block !important;
+}
+
+.dashboard-container.fullscreen .chart-grid,
+.dashboard-container:fullscreen .chart-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+}
+
+/* Ajustement des hauteurs des cartes en fullscreen */
+.dashboard-container.fullscreen .chart-card,
+.dashboard-container:fullscreen .chart-card {
+    min-height: 300px !important;
+    height: auto !important;
+}
+
+.dashboard-container.fullscreen .chart-card.conservation,
+.dashboard-container:fullscreen .chart-card.conservation {
+    min-height: 350px !important;
+    height: auto !important;
+}
+
+/* Amélioration du scrollbar en mode plein écran */
+.dashboard-container.fullscreen .dashboard-body::-webkit-scrollbar,
+.dashboard-container:fullscreen .dashboard-body::-webkit-scrollbar {
+    width: 12px;
+}
+
+.dashboard-container.fullscreen .dashboard-body::-webkit-scrollbar-track,
+.dashboard-container:fullscreen .dashboard-body::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.dashboard-container.fullscreen .dashboard-body::-webkit-scrollbar-thumb,
+.dashboard-container:fullscreen .dashboard-body::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 6px;
+    border: 2px solid #f8f9fa;
+}
+
+.dashboard-container.fullscreen .dashboard-body::-webkit-scrollbar-thumb:hover,
+.dashboard-container:fullscreen .dashboard-body::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6b4190);
+}
+
+/* Amélioration pour Firefox */
+.dashboard-container.fullscreen .dashboard-body,
+.dashboard-container:fullscreen .dashboard-body {
+    scrollbar-width: thin;
+    scrollbar-color: #667eea #f8f9fa;
+}
+
+/* Touch scroll pour mobile */
+.dashboard-container.fullscreen .dashboard-body,
+.dashboard-container:fullscreen .dashboard-body {
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem 0;
+    }
+    
+    .dashboard-header {
+        padding: 1.5rem;
+    }
+    
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+    
+    .chart-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .chart-card {
+        padding: 1.5rem;
+    }
+    
+    .data-selection-panel {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .data-source-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .viz-type-selector {
+        justify-content: center;
+    }
+    
+    .viz-type-btn {
+        min-width: 80px;
+        padding: 0.8rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        text-align: center;
+    }
+    
+    .dashboard-controls {
+        margin-top: 1rem;
+    }
+    
+    .chart-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .data-source-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .viz-type-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .viz-type-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* ============================================================================
+   ANIMATIONS ET TRANSITIONS
+   ============================================================================ */
+
+.fade-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ============================================================================
+   UTILITAIRES
+   ============================================================================ */
+
+.text-gradient {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.shadow-soft {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.shadow-strong {
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
