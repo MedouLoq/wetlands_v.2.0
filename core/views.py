@@ -202,25 +202,84 @@ def get_taxonomic_group_icon(group_name):
     }
     return f"fas {icons.get(group_name, 'fa-paw')}"
 
-from django.http import JsonResponse
-from django.contrib.gis.serializers import geojson
-from .models import Wilaya
-from django.db.models import Count
-
-
-
 def wilayas_geojson(request):
-    """Return wilayas as GeoJSON with site statistics"""
-    wilayas = Wilaya.objects.annotate(
-        site_count=Count('id', distinct=True)
-    ).all()
+    """Return wilayas as GeoJSON with correct site statistics - FIXED VERSION"""
     
+    # Create a mapping dictionary to handle name mismatches
+    REGION_TO_WILAYA_MAPPING = {
+        # Exact matches (no change needed)
+        'Trarza': 'Trarza',
+        'Tagant': 'Tagant',
+        'Adrar': 'Adrar',
+        'Assaba': 'Assaba',
+        'Brakna': 'Brakna',
+        'Inchiri': 'Inchiri',
+        'Nouakchott': 'Nouakchott',
+        'TirisZemmour': 'TirisZemmour',
+        
+        # Mismatched names that need mapping
+        'Hodh El Gharbi': 'HodhelGharbi',
+        'Hodh El Chargui': 'HodhechChargui', 
+        'Dakhlet Nouadhibou': 'DakhletNouadhibou',
+        'Gorgol': 'Gorgol',
+        'Grogol': 'Gorgol',  # Fix the typo
+        'Guidimakha': 'Guidimaka',  # Another potential mismatch
+    }
+    
+    wilayas = Wilaya.objects.all()
+    
+    print("=== DEBUG WILAYAS GEOJSON - FIXED VERSION ===")
+    print(f"Nombre total de wilayas: {wilayas.count()}")
+    
+    all_sites = WetlandSite.objects.exclude(geometry__isnull=True)
+    print(f"Nombre total de sites avec géométrie: {all_sites.count()}")
+    
+    print("\n--- Mapping Test ---")
+    for site_region, wilaya_name in REGION_TO_WILAYA_MAPPING.items():
+        site_count = WetlandSite.objects.filter(region=site_region, geometry__isnull=False).count()
+        if site_count > 0:
+            print(f"'{site_region}' -> '{wilaya_name}': {site_count} sites")
+    
+    print("\n--- Comptage détaillé par Wilaya (FIXED) ---")
     features = []
+    
     for wilaya in wilayas:
+        # Find all region names that map to this wilaya
+        matching_regions = [region for region, mapped_wilaya in REGION_TO_WILAYA_MAPPING.items() 
+                          if mapped_wilaya == wilaya.name]
+        
+        # If no mapping found, try exact match
+        if not matching_regions:
+            matching_regions = [wilaya.name]
+        
+        # Count sites from all matching regions
+        total_sites = 0
+        site_details = []
+        
+        for region_name in matching_regions:
+            sites_in_region = WetlandSite.objects.filter(
+                region=region_name,
+                geometry__isnull=False
+            )
+            region_count = sites_in_region.count()
+            total_sites += region_count
+            
+            if region_count > 0:
+                for site in sites_in_region:
+                    site_details.append(f"  - {site.name} (ID: {site.id}, Région: '{site.region}')")
+        
+        print(f"\n--- WILAYA: {wilaya.name} ---")
+        print(f"Regions mappées: {matching_regions}")
+        print(f"Sites trouvés: {total_sites}")
+        if site_details:
+            print("Sites dans cette wilaya:")
+            for detail in site_details:
+                print(detail)
+        
         # Determine color based on site count
-        if wilaya.site_count >= 5:
+        if total_sites >= 5:
             color = '#d32f2f'  # Red for 5+ sites
-        elif wilaya.site_count >= 1:
+        elif total_sites >= 1:
             color = '#ff9800'  # Orange for 1-4 sites
         else:
             color = '#9e9e9e'  # Gray for 0 sites
@@ -229,13 +288,16 @@ def wilayas_geojson(request):
             "type": "Feature",
             "properties": {
                 "name": wilaya.name,
-                "site_count": wilaya.site_count,
+                "site_count": total_sites,
                 "color": color,
-                "fillOpacity": 0.6 if wilaya.site_count > 0 else 0.3
+                "fillOpacity": 0.6 if total_sites > 0 else 0.3,
+                "mapped_regions": matching_regions  # Debug info
             },
             "geometry": json.loads(wilaya.geometry.geojson)
         }
         features.append(feature)
+    
+    print("=== FIN DEBUG WILAYAS FIXED ===\n")
     
     return JsonResponse({
         "type": "FeatureCollection",
@@ -243,9 +305,94 @@ def wilayas_geojson(request):
     })
 
 
+# Alternative solution: Update the database to fix the mismatches
+def fix_region_names_in_database():
+    """
+    Django management command or one-time script to fix region names
+    Run this once to standardize the region names
+    """
+    
+    # Mapping from current (incorrect) names to correct wilaya names
+    corrections = {
+        'Hodh El Gharbi': 'HodhelGharbi',
+        'Hodh El Chargui': 'HodhechChargui',
+        'Dakhlet Nouadhibou': 'DakhletNouadhibou', 
+        'Grogol': 'Gorgol',  # Fix typo
+        'Guidimakha': 'Guidimaka',
+    }
+    
+    for old_name, new_name in corrections.items():
+        updated_count = WetlandSite.objects.filter(region=old_name).update(region=new_name)
+        if updated_count > 0:
+            print(f"Updated {updated_count} sites from '{old_name}' to '{new_name}'")
+    
+    print("Region name corrections completed!")
+
+
+# Third option: Normalize names for comparison
+def normalize_name(name):
+    """Normalize names for comparison by removing spaces and converting to lowercase"""
+    if not name:
+        return ""
+    return name.replace(" ", "").replace("-", "").lower()
+
+def wilayas_geojson_normalized(request):
+    """Return wilayas as GeoJSON using normalized name comparison"""
+    wilayas = Wilaya.objects.all()
+    
+    print("=== DEBUG WILAYAS GEOJSON - NORMALIZED VERSION ===")
+    
+    features = []
+    for wilaya in wilayas:
+        # Get normalized wilaya name
+        normalized_wilaya = normalize_name(wilaya.name)
+        
+        # Find sites with regions that normalize to the same value
+        matching_sites = []
+        all_sites = WetlandSite.objects.exclude(geometry__isnull=True)
+        
+        for site in all_sites:
+            if normalize_name(site.region) == normalized_wilaya:
+                matching_sites.append(site)
+        
+        site_count = len(matching_sites)
+        
+        print(f"\n--- WILAYA: {wilaya.name} (normalized: {normalized_wilaya}) ---")
+        print(f"Sites trouvés: {site_count}")
+        if matching_sites:
+            print("Sites dans cette wilaya:")
+            for site in matching_sites:
+                print(f"  - {site.name} (ID: {site.id}, Région: '{site.region}')")
+        
+        # Determine color based on site count
+        if site_count >= 5:
+            color = '#d32f2f'
+        elif site_count >= 1:
+            color = '#ff9800'
+        else:
+            color = '#9e9e9e'
+        
+        feature = {
+            "type": "Feature", 
+            "properties": {
+                "name": wilaya.name,
+                "site_count": site_count,
+                "color": color,
+                "fillOpacity": 0.6 if site_count > 0 else 0.3
+            },
+            "geometry": json.loads(wilaya.geometry.geojson)
+        }
+        features.append(feature)
+    
+    print("=== FIN DEBUG WILAYAS NORMALIZED ===\n")
+    
+    return JsonResponse({
+        "type": "FeatureCollection",
+        "features": features
+    })
 
 def species_heatmap_data(request):
-    """Return species distribution data for heatmap"""
+    """Return species distribution data for enhanced heatmap"""
     from .models import SiteSpeciesInventory
     
     # Get species distribution by site
@@ -254,16 +401,34 @@ def species_heatmap_data(request):
         site__geometry__isnull=False
     )
     
+    # Group by site to get species density
+    site_species_count = {}
     for inventory in sites_with_species:
-        if inventory.site.geometry:
-            lat = inventory.site.geometry.y
-            lng = inventory.site.geometry.x
+        site_id = inventory.site.id
+        if site_id not in site_species_count:
+            site_species_count[site_id] = {
+                'site': inventory.site,
+                'count': 0
+            }
+        site_species_count[site_id]['count'] += 1
+    
+    # Create heatmap data based on species density
+    for site_data in site_species_count.values():
+        site = site_data['site']
+        species_count = site_data['count']
+        
+        if site.geometry:
+            lat = site.geometry.y
+            lng = site.geometry.x
+            # Intensity based on number of species at the site
+            intensity = min(species_count / 5.0, 2.0)  # Normalize to max 2.0
+            
             species_data.append({
                 'lat': lat,
                 'lng': lng,
-                'intensity': 1,
-                'species_name': inventory.species.scientific_name or inventory.species.common_name_fr,
-                'site_name': inventory.site.name
+                'intensity': intensity,
+                'species_count': species_count,
+                'site_name': site.name
             })
     
     return JsonResponse({'species_data': species_data})
@@ -271,22 +436,43 @@ def species_heatmap_data(request):
 
 
 def wetlands_heatmap_data(request):
-    """Return wetlands distribution data for heatmap"""
+    """Return wetlands distribution data for enhanced heatmap"""
     sites = WetlandSite.objects.exclude(geometry__isnull=True)
     
     wetlands_data = []
     for site in sites:
         lat = site.geometry.y
         lng = site.geometry.x
+        
+        # Calculate intensity based on multiple factors
+        intensity = 1.0
+        
         # Higher intensity for Ramsar sites
-        intensity = 2.0 if site.is_ramsar_site else 1.0
+        if site.is_ramsar_site:
+            intensity += 1.0
+            
+        # Higher intensity for larger sites
+        if site.area_hectares:
+            if site.area_hectares > 10000:  # Large sites
+                intensity += 0.8
+            elif site.area_hectares > 1000:  # Medium sites
+                intensity += 0.4
+        
+        # Higher intensity for sites with more species
+        species_count = site.species_inventory.count()
+        if species_count > 10:
+            intensity += 0.6
+        elif species_count > 5:
+            intensity += 0.3
         
         wetlands_data.append({
             'lat': lat,
             'lng': lng,
             'intensity': intensity,
             'site_name': site.name,
-            'is_ramsar': site.is_ramsar_site
+            'is_ramsar': site.is_ramsar_site,
+            'area_hectares': site.area_hectares,
+            'species_count': species_count
         })
     
     return JsonResponse({'wetlands_data': wetlands_data})

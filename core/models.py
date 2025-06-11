@@ -112,6 +112,21 @@ class Species(models.Model):
         else:
             return f"Species ID: {self.id}"
 
+# New Image Model
+class SpeciesImage(models.Model):
+    species = models.ForeignKey(Species, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='species_images/')
+    caption = models.CharField(max_length=255, blank=True, null=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = "species_images"
+        verbose_name = "Species Image"
+        verbose_name_plural = "Species Images"
+
+    def __str__(self):
+        return f"Image for {self.species.scientific_name or self.species.common_name_fr}"
+
 # 6. WetlandType Model
 class WetlandType(models.Model):
     id = models.AutoField(primary_key=True)
@@ -173,7 +188,7 @@ class WetlandSite(models.Model):
     
     def save(self, *args, **kwargs):
         # Automatically mark as Ramsar site if code starts with RAMSAR
-        if self.code and self.code.startswith('RAMSAR'):
+        if self.code and self.code.startswith("RAMSAR"):
             self.is_ramsar_site = True
         super().save(*args, **kwargs)
 
