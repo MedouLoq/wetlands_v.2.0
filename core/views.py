@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import JsonResponse
 from django.contrib.gis.serializers import geojson
-from .models import WetlandSite, Species, TaxonomicGroup, Wilaya, SiteSpeciesInventory
+from .models import WetlandSite, Species, TaxonomicGroup, Wilaya, SiteSpeciesInventory, SpeciesImage # Import SpeciesImage
 from django.db.models import Count, Q
 import json
 
@@ -16,7 +16,7 @@ import json
 def home(request):
     """Home page view"""
     # Get featured wetland sites (limit to 3)
-    featured_sites = WetlandSite.objects.all().order_by('?')[:3]
+    featured_sites = WetlandSite.objects.all().order_by("?")[:3]
     
     # Get species count by taxonomic group for the dashboard
     taxonomic_groups = TaxonomicGroup.objects.all()
@@ -111,8 +111,8 @@ def species_list(request):
     taxonomic_group = request.GET.get('group', '')
     search_query = request.GET.get('q', '')
     
-    # Base queryset
-    species_queryset = Species.objects.all()
+    # Base queryset - Fetch related images
+    species_queryset = Species.objects.all().prefetch_related('images')
     
     # Apply filters
     if taxonomic_group:
@@ -146,7 +146,7 @@ def species_list(request):
 @login_required
 def species_detail(request, species_id):
     """Species detail page"""
-    species = get_object_or_404(Species, id=species_id)
+    species = get_object_or_404(Species.objects.prefetch_related('images'), id=species_id)
     
     # Get sites where this species is found
     sites = species.wetland_sites.all()

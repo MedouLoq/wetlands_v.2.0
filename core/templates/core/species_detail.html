@@ -40,8 +40,31 @@
                         <div class="row">
                             <div class="col-md-4 mb-4 mb-md-0">
                                 <div class="species-img rounded">
-                                    {% if species.image %}
-                                        <img src="{{ species.image.url }}" alt="{{ species.scientific_name }}" class="img-fluid">
+                                    {% if species.images.all %}
+                                        <div id="speciesImageCarousel" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                {% for image in species.images.all %}
+                                                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                                        <img src="{{ image.image.url }}" class="d-block w-100" alt="{{ image.caption|default:species.scientific_name }}">
+                                                        {% if image.caption %}
+                                                            <div class="carousel-caption d-none d-md-block">
+                                                                <p>{{ image.caption }}</p>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                            {% if species.images.count > 1 %}
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#speciesImageCarousel" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#speciesImageCarousel" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            {% endif %}
+                                        </div>
                                     {% else %}
                                         <div class="d-flex align-items-center justify-content-center bg-light h-100">
                                             {% if species.taxonomic_group.name == 'Bird' %}
@@ -262,77 +285,53 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="d-flex justify-content-between small text-muted">
-                            <span>Least Concern</span>
-                            <span>Extinct</span>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <p>
-                                <strong>IUCN Status:</strong> 
-                                {% if species.iucn_status == 'LC' %}
-                                    Least Concern
-                                {% elif species.iucn_status == 'NT' %}
-                                    Near Threatened
-                                {% elif species.iucn_status == 'VU' %}
-                                    Vulnerable
-                                {% elif species.iucn_status == 'EN' %}
-                                    Endangered
-                                {% elif species.iucn_status == 'CR' %}
-                                    Critically Endangered
-                                {% elif species.iucn_status == 'EW' %}
-                                    Extinct in the Wild
-                                {% elif species.iucn_status == 'EX' %}
-                                    Extinct
-                                {% elif species.iucn_status == 'DD' %}
-                                    Data Deficient
-                                {% elif species.iucn_status == 'NE' %}
-                                    Not Evaluated
-                                {% endif %}
-                            </p>
-                        </div>
+                        <p class="text-muted text-center">IUCN Red List Status: <strong>{{ species.iucn_status }}</strong></p>
                     {% else %}
-                        <p class="text-muted">No IUCN status information available.</p>
+                        <p class="text-muted">No IUCN status available.</p>
                     {% endif %}
-                    
+
                     {% if species.national_status %}
-                        <div class="mt-3">
-                            <p><strong>National Status:</strong> {{ species.national_status }}</p>
-                        </div>
+                        <p class="text-muted text-center">National Status: <strong>{{ species.national_status }}</strong></p>
+                    {% else %}
+                        <p class="text-muted">No national status available.</p>
                     {% endif %}
                 </div>
             </div>
-            
-            <!-- Related Species -->
-            <div class="card mb-4" data-aos="fade-up" data-aos-delay="100">
+
+            <!-- Quick Facts -->
+            <div class="card mb-4" data-aos="fade-up">
                 <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-project-diagram text-primary me-2"></i> Related Species</h5>
-                    
-                    <p class="text-muted">No related species information available.</p>
-                    
-                    <div class="text-center mt-3">
-                        <a href="{% url 'species_list' %}?group={{ species.taxonomic_group.name }}" class="btn btn-outline-primary">
-                            View All {{ species.taxonomic_group.name }}s
-                        </a>
-                    </div>
+                    <h5 class="card-title"><i class="fas fa-info-circle text-primary me-2"></i> Quick Facts</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Taxonomic Group:</strong>
+                            <span>{{ species.taxonomic_group.name|default:"N/A" }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Scientific Name:</strong>
+                            <span><em>{{ species.scientific_name|default:"N/A" }}</em></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>French Name:</strong>
+                            <span>{{ species.common_name_fr|default:"N/A" }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Local Name:</strong>
+                            <span>{{ species.common_name_local|default:"N/A" }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <strong>Wetland Sites Found:</strong>
+                            <span>{{ sites.count }}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            
-            <!-- Actions -->
-            <div class="card mb-4" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Related Species (Placeholder) -->
+            <div class="card mb-4" data-aos="fade-up">
                 <div class="card-body">
-                    <h5 class="card-title"><i class="fas fa-tools text-primary me-2"></i> Actions</h5>
-                    <div class="d-grid gap-2">
-                        <a href="{% url 'species_list' %}" class="btn btn-outline-primary">
-                            <i class="fas fa-arrow-left me-2"></i> Back to Species
-                        </a>
-                        {% if user.is_staff %}
-                            <a href="{% url 'admin:core_species_change' species.id %}" class="btn btn-outline-primary">
-                                <i class="fas fa-edit me-2"></i> Edit in Admin
-                            </a>
-                        {% endif %}
-                    </div>
+                    <h5 class="card-title"><i class="fas fa-leaf text-primary me-2"></i> Related Species</h5>
+                    <p class="card-text text-muted">No related species information available yet.</p>
                 </div>
             </div>
         </div>
@@ -340,38 +339,4 @@
 </section>
 {% endblock %}
 
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize distribution map
-        const map = L.map('distribution-map').setView([20.5, -10.5], 6);
-        
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        
-        // Add site markers
-        {% for site in sites %}
-            {% if site.geometry %}
-                L.marker([{{ site.geometry.y }}, {{ site.geometry.x }}])
-                    .addTo(map)
-                    .bindPopup("<strong>{{ site.name }}</strong><br>{{ site.region }}{% if site.commune %}, {{ site.commune }}{% endif %}<br><a href='{% url 'wetland_site_detail' site.id %}'>View Details</a>");
-            {% endif %}
-        {% endfor %}
-        
-        // Fit map to markers if any exist
-        {% if sites.count > 0 %}
-            const bounds = [];
-            {% for site in sites %}
-                {% if site.geometry %}
-                    bounds.push([{{ site.geometry.y }}, {{ site.geometry.x }}]);
-                {% endif %}
-            {% endfor %}
-            
-            if (bounds.length > 0) {
-                map.fitBounds(bounds);
-            }
-        {% endif %}
-    });
-</script>
-{% endblock %}
+
