@@ -1,26 +1,52 @@
 /* Enhanced Map Styles for GeoWetlands Mauritania */
 
-/* Map container improvements */
+/* Map Container */
 .map-container {
-    height: calc(100vh - 200px);
-    min-height: 600px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     position: relative;
+    height: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
 }
 
 #map {
     height: 100%;
     width: 100%;
+    border-radius: 15px;
 }
 
-/* Custom marker styles */
-.custom-div-icon {
-    background: none;
-    border: none;
+/* Map Loading */
+.map-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Custom Markers */
 .custom-marker {
     width: 30px;
     height: 30px;
@@ -28,44 +54,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-size: 16px;
     border: 3px solid white;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
 }
 
 .custom-marker:hover {
-    transform: scale(1.2);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transform: scale(1.1);
 }
 
 .ramsar-marker {
     background: linear-gradient(135deg, #ffd700, #ffed4e);
-    animation: pulse-ramsar 2s infinite;
+    border-color: #ffc107;
 }
 
 .wetland-marker {
-    background: linear-gradient(135deg, #1a7a4c, #2d8f5f);
-    animation: pulse-wetland 2s infinite;
+    background: linear-gradient(135deg, #1a7a4c, #2e8b57);
+    border-color: #28a745;
 }
 
-@keyframes pulse-ramsar {
-    0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-}
-
-@keyframes pulse-wetland {
-    0% { box-shadow: 0 0 0 0 rgba(26, 122, 76, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(26, 122, 76, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(26, 122, 76, 0); }
-}
-
-/* Enhanced popup styles */
-.leaflet-popup-content-wrapper {
+/* Custom Popups */
+.custom-popup .leaflet-popup-content-wrapper {
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .map-popup {
@@ -73,17 +85,10 @@
 }
 
 .popup-header {
-    padding: 15px;
-    margin: -20px -20px 15px -20px;
+    padding: 10px;
+    margin: -10px -10px 10px -10px;
     border-radius: 10px 10px 0 0;
     color: white;
-    position: relative;
-}
-
-.popup-header h5 {
-    margin: 0;
-    font-weight: 600;
-    font-size: 1.1rem;
 }
 
 .ramsar-header {
@@ -92,95 +97,76 @@
 }
 
 .wetland-header {
-    background: linear-gradient(135deg, #1a7a4c, #2d8f5f);
+    background: linear-gradient(135deg, #1a7a4c, #2e8b57);
 }
 
 .ramsar-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     padding: 2px 8px;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: 12px;
     margin-top: 5px;
+    display: inline-block;
 }
 
 .popup-content p {
-    margin: 8px 0;
-    font-size: 0.9rem;
-}
-
-.popup-content i {
-    width: 16px;
-    margin-right: 8px;
-    color: #666;
+    margin: 5px 0;
+    font-size: 14px;
 }
 
 .popup-actions {
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
-    gap: 8px;
+    gap: 5px;
 }
 
-.popup-actions .btn {
-    flex: 1;
-    font-size: 0.8rem;
-    padding: 6px 12px;
+/* Map Controls */
+.map-controls {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-/* Enhanced legend styles */
-.legend {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-.legend-content h6 {
-    margin: 0 0 12px 0;
-    color: #333;
-    font-weight: 600;
-}
-
-.legend-item {
+.filter-btn {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    color: #495057;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+    gap: 5px;
 }
 
-.legend-item i {
-    width: 20px;
-    margin-right: 10px;
-    text-align: center;
+.filter-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    transform: translateY(-2px);
 }
 
-.heatmap-gradient {
-    width: 20px;
-    height: 12px;
-    background: linear-gradient(to right, #3388ff, #ffff00, #ff0000);
-    border-radius: 6px;
-    margin-right: 10px;
+.filter-btn.active {
+    background: #007bff;
+    border-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Search control styles */
+/* Search Control */
 .search-control {
     position: relative;
-}
-
-.search-control input {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-size: 0.9rem;
-    width: 100%;
-}
-
-.search-control input:focus {
-    outline: none;
-    border-color: #1a7a4c;
-    box-shadow: 0 0 0 2px rgba(26, 122, 76, 0.2);
 }
 
 .search-results {
@@ -191,150 +177,164 @@
     background: white;
     border: 1px solid #ddd;
     border-top: none;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 5px 5px;
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-result-item:hover {
     background: #f8f9fa;
 }
 
-/* Enhanced map controls */
-.map-controls {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px;
+/* Legend */
+.legend {
+    background: white;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    line-height: 1.4;
+    max-width: 200px;
+    
 }
 
-.map-controls .form-label {
-    font-weight: 600;
+.legend-content h6 {
+    margin: 0 0 10px 0;
     color: #333;
-    margin-bottom: 8px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+
 }
 
-.map-controls .form-select,
-.map-controls .form-control {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+.legend-section {
+    margin-bottom: 15px;
 }
 
-.map-controls .form-select:focus,
-.map-controls .form-control:focus {
-    border-color: #1a7a4c;
-    box-shadow: 0 0 0 3px rgba(26, 122, 76, 0.1);
+.legend-section h7 {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 12px;
 }
 
-/* Filter buttons */
-.filter-buttons {
+.legend-item {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
-    flex-wrap: wrap;
+    align-items: center;
+    margin: 5px 0;
+    gap: 8px;
 }
 
-.filter-btn {
-    padding: 8px 16px;
-    border: 2px solid #1a7a4c;
-    background: transparent;
-    color: #1a7a4c;
-    border-radius: 25px;
+.legend-item i {
+    width: 16px;
+    text-align: center;
+}
+
+.heatmap-gradient {
+    width: 30px;
+    height: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.heatmap-gradient.wetlands {
+    background: linear-gradient(to right, #3388ff, #ffff00, #ff0000);
+}
+
+.heatmap-gradient.species {
+    background: linear-gradient(to right, #00ff00, #ffff00, #ff6600);
+}
+
+.wilaya-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+/* Wilaya Popup */
+.wilaya-popup h5 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.site-count-indicator {
+    margin-right: 5px;
+}
+
+/* Statistics Cards */
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
     font-size: 0.9rem;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
-    background: #1a7a4c;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(26, 122, 76, 0.3);
-}
-
-/* Leaflet control customizations */
-.leaflet-control-layers {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.leaflet-control-layers-expanded {
-    padding: 15px;
-}
-
-.leaflet-control-zoom {
+/* Featured Sites */
+.site-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-.leaflet-control-zoom a {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border: none;
+.site-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ramsar-card {
+    border-left: 5px solid #ffd700;
+}
+
+.wetland-card {
+    border-left: 5px solid #28a745;
+}
+
+.badge-ramsar {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
     color: #333;
-    font-weight: 600;
-    transition: all 0.3s ease;
 }
 
-.leaflet-control-zoom a:hover {
-    background: #1a7a4c;
+.badge-wetland {
+    background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
 }
 
-.leaflet-control-scale {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 6px;
-    padding: 5px 10px;
-    border: 1px solid rgba(255,255,255,0.3);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Fullscreen control */
-.leaflet-control-fullscreen {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 6px;
-    border: none;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-}
-
-.leaflet-control-fullscreen a {
-    background: none;
-    color: #333;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.leaflet-control-fullscreen a:hover {
-    color: #1a7a4c;
-    transform: scale(1.1);
-}
-
-/* Responsive design */
+/* Responsive Design */
 @media (max-width: 768px) {
     .map-container {
         height: 400px;
-        margin-bottom: 20px;
-    }
-    
-    .map-controls {
-        padding: 15px;
+        border-radius: 10px;
     }
     
     .filter-buttons {
@@ -342,179 +342,18 @@
     }
     
     .filter-btn {
-        font-size: 0.8rem;
+        font-size: 12px;
         padding: 6px 12px;
     }
     
     .legend {
-        font-size: 0.8rem;
+        font-size: 12px;
         padding: 10px;
     }
     
-    .popup-actions {
-        flex-direction: column;
-    }
-}
-
-/* Loading animation */
-.map-loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-.map-loading .spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #1a7a4c;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 10px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-
-/* Statistics cards */
-.stat-card {
-    background: linear-gradient(135deg, #fff, #f8f9fa);
-    border-radius: 15px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.stat-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #1a7a4c;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    font-size: 1rem;
-    color: #666;
-    font-weight: 500;
-}
-
-/* Site cards */
-.site-card {
-    transition: all 0.3s ease;
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-
-.site-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.ramsar-card .card-img-top .bg-gradient {
-    background: linear-gradient(135deg, #ffd700, #ffed4e) !important;
-}
-
-.wetland-card .card-img-top .bg-gradient {
-    background: linear-gradient(135deg, #1a7a4c, #2d8f5f) !important;
-}
-
-.badge-ramsar {
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    color: #333;
-    font-weight: 600;
-}
-
-.badge-wetland {
-    background: linear-gradient(135deg, #1a7a4c, #2d8f5f);
-    color: white;
-    font-weight: 600;
-}
-
-/* Dashboard placeholder */
-.dashboard-placeholder .card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-.dashboard-placeholder .card-header {
-    background: linear-gradient(135deg, #1a7a4c, #2d8f5f) !important;
-    border: none;
-    padding: 20px;
-}
-
-.dashboard-placeholder .card-body {
-    background: linear-gradient(135deg, #f8f9fa, #fff);
-}
-
-.placeholder-features {
-    margin-top: 30px;
-}
-
-.placeholder-features .col-md-4 {
-    margin-bottom: 20px;
-}
-
-.placeholder-features i {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.placeholder-features h6 {
-    font-weight: 600;
-    color: #333;
-}
-
-/* Section titles */
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.section-title p {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Responsive improvements */
-@media (max-width: 576px) {
     .stat-card {
-        padding: 20px 15px;
+        padding: 20px;
+        margin-bottom: 15px;
     }
     
     .stat-number {
@@ -524,19 +363,485 @@
     .stat-icon {
         font-size: 2rem;
     }
-    
-    .section-title h2 {
-        font-size: 2rem;
+}
+
+/* Leaflet Control Customization */
+.leaflet-control-layers {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-control-zoom {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-control-zoom a {
+    border-radius: 0;
+}
+
+.leaflet-control-zoom a:first-child {
+    border-radius: 10px 10px 0 0;
+}
+
+.leaflet-control-zoom a:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+/* Custom Control Styles */
+.leaflet-control-custom {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.leaflet-control-custom:hover {
+    background-color: #f8f9fa !important;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Dashboard Placeholder */
+.dashboard-placeholder {
+    margin-top: 30px;
+}
+
+.placeholder-features {
+    margin-top: 20px;
+}
+
+.placeholder-features .row > div {
+    margin-bottom: 15px;
+}
+
+.placeholder-features i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.placeholder-features h6 {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+/* Species Popup */
+.species-popup h6 {
+    margin: 0 0 10px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.species-popup p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Threat Popup */
+.threat-popup h6 {
+    margin: 0 0 10px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.threat-popup p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.threat-popup .badge {
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Danger Indicators */
+.danger-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px dashed #fff;
+}
+
+.danger-indicator.high {
+    background-color: #d32f2f;
+}
+
+.danger-indicator.medium {
+    background-color: #ff9800;
+}
+
+.danger-indicator.low {
+    background-color: #ffc107;
+}
+
+/* Wilaya Colors in Legend */
+.wilaya-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+
+/* Enhanced Search Control */
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #666;
+    z-index: 1;
+}
+
+.search-spinner {
+    position: absolute;
+    right: 10px;
+    color: #007bff;
+}
+
+#map-search {
+    padding-left: 35px;
+    padding-right: 35px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-result-item {
+    border-bottom: 1px solid #eee;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-content {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-result-content:hover {
+    background-color: #f8f9fa;
+}
+
+.search-result-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.search-result-icon {
+    width: 16px;
+    color: #007bff;
+}
+
+.search-result-description {
+    font-size: 12px;
+    color: #666;
+    margin-left: 24px;
+}
+
+.search-no-results,
+.search-error {
+    padding: 10px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.search-error {
+    color: #dc3545;
+}
+
+/* Measurement Tool Styles */
+.measure-marker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.measure-marker.start {
+    background-color: #28a745;
+}
+
+.measure-marker.end {
+    background-color: #dc3545;
+}
+
+.measure-result {
+    text-align: center;
+    min-width: 200px;
+}
+
+.measure-result h6 {
+    margin: 0 0 10px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.measure-result p {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.temp-search-marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    animation: searchPulse 2s ease-in-out infinite;
+}
+
+@keyframes searchPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+
+/* Interactive Legend Styles */
+.legend {
+    background: white;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    line-height: 1.4;
+    max-width: 250px;
+    min-width: 200px;
+}
+
+.legend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+
+.legend-header h6 {
+    margin: 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.legend-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.legend-body {
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.legend-content h6 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.legend-section {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.legend-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.legend-section h7 {
+    display: block;
+    margin-bottom: 8px;
+    color: #495057;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    gap: 10px;
+    padding: 2px 0;
+    transition: background-color 0.2s ease;
+    border-radius: 3px;
+    padding: 4px 6px;
+}
+
+.legend-item:hover {
+    background-color: #f8f9fa;
+}
+
+.legend-item i {
+    width: 18px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.legend-item span {
+    font-size: 12px;
+    color: #495057;
+}
+
+.heatmap-gradient {
+    width: 35px;
+    height: 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.heatmap-gradient.wetlands {
+    background: linear-gradient(to right, #3388ff, #ffff00, #ff0000);
+}
+
+.heatmap-gradient.species {
+    background: linear-gradient(to right, #00ff00, #ffff00, #ff6600);
+}
+
+.wilaya-color {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+/* Danger Indicators */
+.danger-indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px dashed #fff;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.danger-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.danger-indicator.high {
+    background-color: #d32f2f;
+    border-color: #d32f2f;
+}
+
+.danger-indicator.medium {
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+
+.danger-indicator.low {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+/* Responsive Legend */
+@media (max-width: 768px) {
+    .legend {
+        max-width: 180px;
+        font-size: 11px;
     }
     
-    .filter-buttons {
-        justify-content: center;
+    .legend-header {
+        padding: 10px;
     }
     
-    .filter-btn {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-        margin: 2px;
+    .legend-body {
+        padding: 10px;
+        max-height: 300px;
+    }
+    
+    .legend-item {
+        gap: 8px;
+    }
+    
+    .legend-item i {
+        width: 16px;
+        font-size: 12px;
+    }
+    
+    .legend-item span {
+        font-size: 11px;
     }
 }
 

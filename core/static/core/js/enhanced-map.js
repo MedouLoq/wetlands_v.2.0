@@ -4,6 +4,8 @@
 let map;
 let siteMarkers = [];
 let heatmapLayer;
+let speciesHeatmapLayer;
+let wilayasLayer;
 let layerControl;
 let currentFilter = 'all';
 
@@ -14,7 +16,6 @@ let overlayLayers = {};
 // Initialize enhanced map
 function initializeMap() {
     // Create map centered on Mauritania with better initial view
-
     if (map) {
         map.remove(); // Supprime l'instance de carte existante si elle existe
     }
@@ -47,10 +48,9 @@ function initializeMap() {
             maxZoom: 17
         }),
         
-        "Géographique": L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            subdomains: 'abcd',
-            maxZoom: 18
+        "Géographique": L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap France | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 20
         })
     };
 
@@ -61,8 +61,11 @@ function initializeMap() {
     overlayLayers = {
         "Sites Ramsar": L.layerGroup(),
         "Zones Humides": L.layerGroup(),
-        "Carte de Chaleur": L.layerGroup(),
-        "Limites Administratives": L.layerGroup()
+        "Heatmap Zones Humides": L.layerGroup(),
+        "Heatmap Espèces": L.layerGroup(),
+        "Wilayas": L.layerGroup(),
+        "Couches Espèces": L.layerGroup(),
+        "Zones de Danger": L.layerGroup()
     };
 
     // Add layer control
@@ -73,6 +76,15 @@ function initializeMap() {
 
     // Load and display site data
     loadSiteData();
+    
+    // Load wilayas data
+    loadWilayasData();
+    
+    // Load heatmap data
+    loadHeatmapData();
+    
+    // Load species and threats data
+    loadSpeciesAndThreatsData();
     
     // Add scale control
     L.control.scale({
@@ -95,8 +107,8 @@ function initializeMap() {
     // Add custom legend
     addCustomLegend();
     
-    // Add administrative boundaries
-    addAdministrativeBoundaries();
+    // Add measurement tool
+    addMeasurementTool();
 }
 
 // Load and process site data
@@ -111,10 +123,6 @@ function loadSiteData() {
         siteMarkers = [];
         overlayLayers["Sites Ramsar"].clearLayers();
         overlayLayers["Zones Humides"].clearLayers();
-        overlayLayers["Carte de Chaleur"].clearLayers();
-
-        // Prepare data for heatmap
-        let heatmapData = [];
 
         sitesData.forEach(site => {
             if (site.geometry) {
@@ -122,7 +130,7 @@ function loadSiteData() {
                 const lng = site.geometry.coordinates[0];
                 
                 // Determine if it's a Ramsar site
-                const isRamsar = site.name.includes('Parc National') || 
+                const isRamsar = site.isRamsar || site.name.includes('Parc National') || 
                                 site.name.includes('Chat Tboul') || 
                                 site.name.includes('Lac Gabou');
 
@@ -148,26 +156,8 @@ function loadSiteData() {
                 }
                 
                 siteMarkers.push(marker);
-                
-                // Add to heatmap data
-                heatmapData.push([lat, lng, isRamsar ? 1.0 : 0.5]);
             }
         });
-
-        // Create heatmap layer
-        if (heatmapData.length > 0) {
-            heatmapLayer = L.heatLayer(heatmapData, {
-                radius: 25,
-                blur: 15,
-                maxZoom: 10,
-                gradient: {
-                    0.0: '#3388ff',
-                    0.5: '#ffff00',
-                    1.0: '#ff0000'
-                }
-            });
-            overlayLayers["Carte de Chaleur"].addLayer(heatmapLayer);
-        }
 
         // Add default layers to map
         overlayLayers["Sites Ramsar"].addTo(map);
@@ -187,6 +177,180 @@ function loadSiteData() {
     }
 }
 
+// Load wilayas data with statistics
+function loadWilayasData() {
+    fetch('/api/wilayas/')
+        .then(response => response.json())
+        .then(data => {
+            wilayasLayer = L.geoJSON(data, {
+                style: function(feature) {
+                    return {
+                        fillColor: feature.properties.color,
+                        weight: 2,
+                        opacity: 1,
+                        color: '#666',
+                        dashArray: '3',
+                        fillOpacity: feature.properties.fillOpacity
+                    };
+                },
+                onEachFeature: function(feature, layer) {
+                    const props = feature.properties;
+                    const popupContent = `
+                        <div class="wilaya-popup">
+                            <h5>${props.name}</h5>
+                            <p><strong>Nombre de sites:</strong> ${props.site_count}</p>
+                            <div class="site-count-indicator" style="background-color: ${props.color}; width: 20px; height: 20px; border-radius: 50%; display: inline-block;"></div>
+                            <span style="margin-left: 10px;">
+                                ${props.site_count >= 5 ? 'Zone à forte densité' : 
+                                  props.site_count >= 1 ? 'Zone à densité modérée' : 'Zone sans sites répertoriés'}
+                            </span>
+                        </div>
+                    `;
+                    layer.bindPopup(popupContent);
+                }
+            });
+            
+            overlayLayers["Wilayas"].addLayer(wilayasLayer);
+        })
+        .catch(error => console.error('Error loading wilayas:', error));
+}
+
+// Load species by type and threats data
+function loadSpeciesAndThreatsData() {
+    // Load species by type
+    fetch('/api/species-by-type/')
+        .then(response => response.json())
+        .then(data => {
+            const speciesData = data.species_by_type;
+            
+            Object.keys(speciesData).forEach(groupName => {
+                const group = speciesData[groupName];
+                const layerGroup = L.layerGroup();
+                
+                group.data.forEach(species => {
+                    const circle = L.circleMarker([species.lat, species.lng], {
+                        radius: 8,
+                        fillColor: group.color,
+                        color: '#fff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    }).bindPopup(`
+                        <div class="species-popup">
+                            <h6><i class="${group.icon}"></i> ${groupName}</h6>
+                            <p><strong>Espèce:</strong> ${species.species_name}</p>
+                            <p><strong>Site:</strong> ${species.site_name}</p>
+                            <a href="/wetland-sites/${species.site_id}/" class="btn btn-sm btn-primary">Voir le site</a>
+                        </div>
+                    `);
+                    
+                    layerGroup.addLayer(circle);
+                });
+                
+                overlayLayers[`Espèces: ${groupName}`] = layerGroup;
+                
+                // Update layer control
+                if (layerControl) {
+                    layerControl.addOverlay(layerGroup, `Espèces: ${groupName}`);
+                }
+            });
+        })
+        .catch(error => console.error('Error loading species data:', error));
+
+    // Load threats data
+    fetch('/api/threats/')
+        .then(response => response.json())
+        .then(data => {
+            const threatsData = data.threats_data;
+            const threatsLayer = L.layerGroup();
+            
+            threatsData.forEach(threat => {
+                // Create danger zone circle with dashed border
+                const dangerZone = L.circle([threat.lat, threat.lng], {
+                    radius: 2000, // 2km radius
+                    fillColor: threat.color,
+                    color: threat.color,
+                    weight: 3,
+                    opacity: 0.8,
+                    fillOpacity: 0.2,
+                    dashArray: '10, 10'
+                }).bindPopup(`
+                    <div class="threat-popup">
+                        <h6><i class="fas fa-exclamation-triangle" style="color: ${threat.color};"></i> Zone de Danger</h6>
+                        <p><strong>Menace:</strong> ${threat.threat_name}</p>
+                        <p><strong>Type:</strong> ${threat.threat_type}</p>
+                        <p><strong>Niveau de risque:</strong> 
+                            <span class="badge" style="background-color: ${threat.color};">${threat.risk_level}</span>
+                        </p>
+                        <p><strong>Site:</strong> ${threat.site_name}</p>
+                        ${threat.notes ? `<p><strong>Notes:</strong> ${threat.notes}</p>` : ''}
+                        <a href="/wetland-sites/${threat.site_id}/" class="btn btn-sm btn-primary">Voir le site</a>
+                    </div>
+                `);
+                
+                threatsLayer.addLayer(dangerZone);
+            });
+            
+            overlayLayers["Zones de Danger"] = threatsLayer;
+            
+            // Update layer control
+            if (layerControl) {
+                layerControl.addOverlay(threatsLayer, "Zones de Danger");
+            }
+        })
+        .catch(error => console.error('Error loading threats data:', error));
+}
+
+// Load heatmap data
+function loadHeatmapData() {
+    fetch('/api/wetlands-heatmap/')
+        .then(response => response.json())
+        .then(data => {
+            const heatmapData = data.wetlands_data.map(item => [
+                item.lat, 
+                item.lng, 
+                item.intensity
+            ]);
+            
+            heatmapLayer = L.heatLayer(heatmapData, {
+                radius: 25,
+                blur: 15,
+                maxZoom: 10,
+                gradient: {
+                    0.0: '#3388ff',
+                    0.5: '#ffff00',
+                    1.0: '#ff0000'
+                }
+            });
+            overlayLayers["Heatmap Zones Humides"].addLayer(heatmapLayer);
+        })
+        .catch(error => console.error('Error loading wetlands heatmap:', error));
+
+    // Load species heatmap
+    fetch('/api/species-heatmap/')
+        .then(response => response.json())
+        .then(data => {
+            const speciesHeatmapData = data.species_data.map(item => [
+                item.lat, 
+                item.lng, 
+                item.intensity
+            ]);
+            
+            speciesHeatmapLayer = L.heatLayer(speciesHeatmapData, {
+                radius: 20,
+                blur: 10,
+                maxZoom: 12,
+                gradient: {
+                    0.0: '#00ff00',
+                    0.5: '#ffff00',
+                    1.0: '#ff6600'
+                }
+            });
+            overlayLayers["Heatmap Espèces"].addLayer(speciesHeatmapLayer);
+        })
+        .catch(error => console.error('Error loading species heatmap:', error));
+}
+
 // Create custom icons for different site types
 function createCustomIcon(isRamsar) {
     const iconHtml = isRamsar ? 
@@ -204,7 +368,7 @@ function createCustomIcon(isRamsar) {
 
 // Create enhanced popup content
 function createPopupContent(site) {
-    const isRamsar = site.name.includes('Parc National') || 
+    const isRamsar = site.isRamsar || site.name.includes('Parc National') || 
                     site.name.includes('Chat Tboul') || 
                     site.name.includes('Lac Gabou');
     
@@ -237,11 +401,19 @@ function addSearchControl() {
             const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
             container.style.backgroundColor = 'white';
             container.style.padding = '10px';
-            container.style.minWidth = '200px';
+            container.style.minWidth = '300px';
+            container.style.borderRadius = '10px';
+            container.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
             
             container.innerHTML = `
                 <div class="search-control">
-                    <input type="text" id="map-search" placeholder="Rechercher un site..." class="form-control form-control-sm">
+                    <div class="search-input-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="map-search" placeholder="Rechercher sites, wilayas, espèces..." class="form-control form-control-sm">
+                        <div class="search-spinner" id="search-spinner" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                    </div>
                     <div id="search-results" class="search-results"></div>
                 </div>
             `;
@@ -254,37 +426,255 @@ function addSearchControl() {
     
     map.addControl(new searchControl({ position: 'topleft' }));
     
-    // Add search functionality
+    // Add enhanced search functionality
     setTimeout(() => {
         const searchInput = document.getElementById('map-search');
         const searchResults = document.getElementById('search-results');
+        const searchSpinner = document.getElementById('search-spinner');
+        let searchTimeout;
         
         if (searchInput) {
             searchInput.addEventListener('input', function() {
-                const query = this.value.toLowerCase();
-                searchResults.innerHTML = '';
+                const query = this.value.trim();
                 
-                if (query.length < 2) return;
+                // Clear previous timeout
+                if (searchTimeout) {
+                    clearTimeout(searchTimeout);
+                }
                 
-                const matches = siteMarkers.filter(marker => 
-                    marker._site.name.toLowerCase().includes(query) ||
-                    (marker._site.region && marker._site.region.toLowerCase().includes(query))
-                ).slice(0, 5);
+                if (query.length < 2) {
+                    searchResults.innerHTML = '';
+                    searchSpinner.style.display = 'none';
+                    return;
+                }
                 
-                matches.forEach(marker => {
-                    const result = document.createElement('div');
-                    result.className = 'search-result-item';
-                    result.innerHTML = `
-                        <div onclick="selectSearchResult(${marker._site.id})" style="cursor: pointer; padding: 5px; border-bottom: 1px solid #eee;">
-                            <strong>${marker._site.name}</strong><br>
-                            <small>${marker._site.region || 'N/A'}</small>
-                        </div>
-                    `;
-                    searchResults.appendChild(result);
-                });
+                // Show spinner
+                searchSpinner.style.display = 'block';
+                
+                // Debounce search
+                searchTimeout = setTimeout(() => {
+                    fetch(`/api/search/?q=${encodeURIComponent(query)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            searchSpinner.style.display = 'none';
+                            searchResults.innerHTML = '';
+                            
+                            if (data.results.length === 0) {
+                                searchResults.innerHTML = '<div class="search-no-results">Aucun résultat trouvé</div>';
+                                return;
+                            }
+                            
+                            data.results.forEach(result => {
+                                const resultDiv = document.createElement('div');
+                                resultDiv.className = 'search-result-item';
+                                resultDiv.innerHTML = `
+                                    <div class="search-result-content" onclick="selectAdvancedSearchResult(${result.lat}, ${result.lng}, '${result.name}', '${result.type}', '${result.url || ''}')">
+                                        <div class="search-result-header">
+                                            <i class="${result.icon} search-result-icon"></i>
+                                            <strong>${result.name}</strong>
+                                        </div>
+                                        <div class="search-result-description">${result.description}</div>
+                                    </div>
+                                `;
+                                searchResults.appendChild(resultDiv);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Search error:', error);
+                            searchSpinner.style.display = 'none';
+                            searchResults.innerHTML = '<div class="search-error">Erreur de recherche</div>';
+                        });
+                }, 300); // 300ms debounce
+            });
+            
+            // Clear search on escape
+            searchInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    this.value = '';
+                    searchResults.innerHTML = '';
+                }
             });
         }
     }, 1000);
+}
+
+// Add measurement tool
+function addMeasurementTool() {
+    const measureControl = L.Control.extend({
+        onAdd: function(map) {
+            const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
+            container.style.backgroundColor = 'white';
+            container.style.width = '40px';
+            container.style.height = '40px';
+            container.style.cursor = 'pointer';
+            container.style.borderRadius = '10px';
+            container.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            container.title = 'Outil de mesure de distance - Cliquez pour activer';
+            
+            container.innerHTML = '<i class="fas fa-ruler" style="line-height: 40px; text-align: center; display: block; font-size: 16px;"></i>';
+            
+            let measuring = false;
+            let measureLine = null;
+            let startPoint = null;
+            let measureMarkers = [];
+            
+            container.onclick = function() {
+                if (!measuring) {
+                    // Start measuring
+                    measuring = true;
+                    container.style.backgroundColor = '#007cff';
+                    container.style.color = 'white';
+                    container.title = 'Mode mesure actif - Cliquez sur deux points pour mesurer la distance';
+                    map.getContainer().style.cursor = 'crosshair';
+                    
+                    // Add instruction popup
+                    const instructionPopup = L.popup()
+                        .setLatLng(map.getCenter())
+                        .setContent('<div style="text-align: center;"><strong>Mode Mesure Activé</strong><br>Cliquez sur deux points pour mesurer la distance</div>')
+                        .openOn(map);
+                    
+                    setTimeout(() => map.closePopup(instructionPopup), 3000);
+                    
+                    const measureClickHandler = function(e) {
+                        if (!startPoint) {
+                            // First click - set start point
+                            startPoint = e.latlng;
+                            
+                            // Add start marker
+                            const startMarker = L.marker(startPoint, {
+                                icon: L.divIcon({
+                                    html: '<div class="measure-marker start"><i class="fas fa-play"></i></div>',
+                                    className: 'custom-div-icon',
+                                    iconSize: [20, 20],
+                                    iconAnchor: [10, 10]
+                                })
+                            }).addTo(map);
+                            measureMarkers.push(startMarker);
+                            
+                            // Create line
+                            measureLine = L.polyline([startPoint], {
+                                color: '#ff4444',
+                                weight: 3,
+                                dashArray: '5, 10',
+                                opacity: 0.8
+                            }).addTo(map);
+                            
+                            // Add mousemove handler for live preview
+                            const mouseMoveHandler = function(e) {
+                                if (measureLine && startPoint) {
+                                    measureLine.setLatLngs([startPoint, e.latlng]);
+                                }
+                            };
+                            map.on('mousemove', mouseMoveHandler);
+                            
+                            // Store mousemove handler for cleanup
+                            measureLine._mouseMoveHandler = mouseMoveHandler;
+                            
+                        } else {
+                            // Second click - complete measurement
+                            const endPoint = e.latlng;
+                            measureLine.addLatLng(endPoint);
+                            
+                            // Remove mousemove handler
+                            if (measureLine._mouseMoveHandler) {
+                                map.off('mousemove', measureLine._mouseMoveHandler);
+                            }
+                            
+                            // Add end marker
+                            const endMarker = L.marker(endPoint, {
+                                icon: L.divIcon({
+                                    html: '<div class="measure-marker end"><i class="fas fa-stop"></i></div>',
+                                    className: 'custom-div-icon',
+                                    iconSize: [20, 20],
+                                    iconAnchor: [10, 10]
+                                })
+                            }).addTo(map);
+                            measureMarkers.push(endMarker);
+                            
+                            // Calculate distance
+                            const distance = startPoint.distanceTo(endPoint);
+                            const distanceText = distance > 1000 ? 
+                                `${(distance / 1000).toFixed(2)} km` : 
+                                `${distance.toFixed(0)} m`;
+                            
+                            // Add result popup at midpoint
+                            const midpoint = L.latLng(
+                                (startPoint.lat + endPoint.lat) / 2,
+                                (startPoint.lng + endPoint.lng) / 2
+                            );
+                            
+                            const resultPopup = L.popup({
+                                closeButton: true,
+                                autoClose: false,
+                                closeOnClick: false,
+                                className: 'measure-result-popup'
+                            })
+                                .setLatLng(midpoint)
+                                .setContent(`
+                                    <div class="measure-result">
+                                        <h6><i class="fas fa-ruler"></i> Résultat de Mesure</h6>
+                                        <p><strong>Distance:</strong> ${distanceText}</p>
+                                        <button onclick="clearMeasurement()" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash"></i> Effacer
+                                        </button>
+                                    </div>
+                                `)
+                                .openOn(map);
+                            
+                            // Store measurement data for cleanup
+                            window.currentMeasurement = {
+                                line: measureLine,
+                                markers: measureMarkers,
+                                popup: resultPopup
+                            };
+                            
+                            // Reset measurement state
+                            measuring = false;
+                            startPoint = null;
+                            measureLine = null;
+                            measureMarkers = [];
+                            container.style.backgroundColor = 'white';
+                            container.style.color = 'black';
+                            container.title = 'Outil de mesure de distance - Cliquez pour activer';
+                            map.getContainer().style.cursor = '';
+                            map.off('click', measureClickHandler);
+                        }
+                    };
+                    
+                    map.on('click', measureClickHandler);
+                    
+                } else {
+                    // Cancel measurement
+                    measuring = false;
+                    startPoint = null;
+                    
+                    // Clean up
+                    if (measureLine) {
+                        map.removeLayer(measureLine);
+                        if (measureLine._mouseMoveHandler) {
+                            map.off('mousemove', measureLine._mouseMoveHandler);
+                        }
+                        measureLine = null;
+                    }
+                    
+                    measureMarkers.forEach(marker => map.removeLayer(marker));
+                    measureMarkers = [];
+                    
+                    container.style.backgroundColor = 'white';
+                    container.style.color = 'black';
+                    container.title = 'Outil de mesure de distance - Cliquez pour activer';
+                    map.getContainer().style.cursor = '';
+                    map.off('click');
+                }
+            };
+            
+            L.DomEvent.disableClickPropagation(container);
+            
+            return container;
+        }
+    });
+    
+    map.addControl(new measureControl({ position: 'topleft' }));
 }
 
 // Add custom legend
@@ -295,18 +685,113 @@ function addCustomLegend() {
         const div = L.DomUtil.create('div', 'info legend');
         div.innerHTML = `
             <div class="legend-content">
-                <h6><i class="fas fa-info-circle"></i> Légende</h6>
-                <div class="legend-item">
-                    <i class="fas fa-star" style="color: #ffd700;"></i>
-                    <span>Sites Ramsar</span>
+                <div class="legend-header">
+                    <h6><i class="fas fa-info-circle"></i> Légende Interactive</h6>
+                    <button class="legend-toggle" onclick="toggleLegend()">
+                        <i class="fas fa-chevron-up"></i>
+                    </button>
                 </div>
-                <div class="legend-item">
-                    <i class="fas fa-tint" style="color: #1a7a4c;"></i>
-                    <span>Zones Humides</span>
-                </div>
-                <div class="legend-item">
-                    <div class="heatmap-gradient"></div>
-                    <span>Densité (Carte de Chaleur)</span>
+                
+                <div class="legend-body" id="legend-body">
+                    <div class="legend-section">
+                        <h7><strong>Sites</strong></h7>
+                        <div class="legend-item">
+                            <i class="fas fa-star" style="color: #ffd700;"></i>
+                            <span>Sites Ramsar</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-tint" style="color: #1a7a4c;"></i>
+                            <span>Zones Humides</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-section">
+                        <h7><strong>Heatmaps</strong></h7>
+                        <div class="legend-item">
+                            <div class="heatmap-gradient wetlands"></div>
+                            <span>Densité Zones Humides</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="heatmap-gradient species"></div>
+                            <span>Densité Espèces</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-section">
+                        <h7><strong>Wilayas</strong></h7>
+                        <div class="legend-item">
+                            <div class="wilaya-color" style="background-color: #d32f2f;"></div>
+                            <span>5+ sites</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="wilaya-color" style="background-color: #ff9800;"></div>
+                            <span>1-4 sites</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="wilaya-color" style="background-color: #9e9e9e;"></div>
+                            <span>0 sites</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-section">
+                        <h7><strong>Espèces par Type</strong></h7>
+                        <div class="legend-item">
+                            <i class="fas fa-dove" style="color: #2196f3;"></i>
+                            <span>Oiseaux</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-fish" style="color: #00bcd4;"></i>
+                            <span>Poissons</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-otter" style="color: #ff9800;"></i>
+                            <span>Mammifères</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-seedling" style="color: #4caf50;"></i>
+                            <span>Plantes</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-dragon" style="color: #9c27b0;"></i>
+                            <span>Reptiles</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-bug" style="color: #ffeb3b;"></i>
+                            <span>Insectes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-section">
+                        <h7><strong>Zones de Danger</strong></h7>
+                        <div class="legend-item">
+                            <div class="danger-indicator high"></div>
+                            <span>Risque Élevé</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="danger-indicator medium"></div>
+                            <span>Risque Moyen</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="danger-indicator low"></div>
+                            <span>Risque Faible</span>
+                        </div>
+                    </div>
+                    
+                    <div class="legend-section">
+                        <h7><strong>Outils</strong></h7>
+                        <div class="legend-item">
+                            <i class="fas fa-ruler" style="color: #007bff;"></i>
+                            <span>Mesure de Distance</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-search" style="color: #28a745;"></i>
+                            <span>Recherche Avancée</span>
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-expand" style="color: #6c757d;"></i>
+                            <span>Plein Écran</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
@@ -314,22 +799,6 @@ function addCustomLegend() {
     };
     
     legend.addTo(map);
-}
-
-// Add administrative boundaries (placeholder for now)
-function addAdministrativeBoundaries() {
-    // This would typically load GeoJSON data for Mauritanian wilayas
-    // For now, we'll add a placeholder
-    const boundariesLayer = L.geoJSON(null, {
-        style: {
-            color: '#666',
-            weight: 2,
-            opacity: 0.6,
-            fillOpacity: 0.1
-        }
-    });
-    
-    overlayLayers["Limites Administratives"].addLayer(boundariesLayer);
 }
 
 // Utility functions
@@ -396,4 +865,104 @@ window.filterByRegion = filterByRegion;
 window.filterByType = filterByType;
 window.zoomToSite = zoomToSite;
 window.selectSearchResult = selectSearchResult;
+window.overlayLayers = overlayLayers;
+
+
+// Advanced search result selection
+function selectAdvancedSearchResult(lat, lng, name, type, url) {
+    // Zoom to location
+    map.setView([lat, lng], type === 'wilaya' ? 8 : 12);
+    
+    // Clear search
+    const searchInput = document.getElementById('map-search');
+    const searchResults = document.getElementById('search-results');
+    if (searchInput) searchInput.value = '';
+    if (searchResults) searchResults.innerHTML = '';
+    
+    // Add temporary marker
+    const tempMarker = L.marker([lat, lng], {
+        icon: L.divIcon({
+            html: '<div class="temp-search-marker"><i class="fas fa-search"></i></div>',
+            className: 'custom-div-icon',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15]
+        })
+    }).addTo(map);
+    
+    // Remove temporary marker after 3 seconds
+    setTimeout(() => {
+        map.removeLayer(tempMarker);
+    }, 3000);
+    
+    // Open URL if available
+    if (url && url !== 'null') {
+        setTimeout(() => {
+            window.open(url, '_blank');
+        }, 1000);
+    }
+}
+
+// Clear measurement function
+function clearMeasurement() {
+    if (window.currentMeasurement) {
+        const measurement = window.currentMeasurement;
+        
+        // Remove line
+        if (measurement.line) {
+            map.removeLayer(measurement.line);
+        }
+        
+        // Remove markers
+        if (measurement.markers) {
+            measurement.markers.forEach(marker => map.removeLayer(marker));
+        }
+        
+        // Close popup
+        if (measurement.popup) {
+            map.closePopup(measurement.popup);
+        }
+        
+        // Clear reference
+        window.currentMeasurement = null;
+    }
+}
+
+
+// Toggle legend visibility
+function toggleLegend() {
+    const legendBody = document.getElementById('legend-body');
+    const toggleButton = document.querySelector('.legend-toggle i');
+    
+    if (legendBody.style.display === 'none') {
+        legendBody.style.display = 'block';
+        toggleButton.className = 'fas fa-chevron-up';
+    } else {
+        legendBody.style.display = 'none';
+        toggleButton.className = 'fas fa-chevron-down';
+    }
+}
+
+// Get taxonomic group icon
+function get_taxonomic_group_icon(groupName) {
+    const icons = {
+        'Bird': 'fas fa-dove',
+        'Fish': 'fas fa-fish',
+        'Mammal': 'fas fa-otter',
+        'Plant': 'fas fa-seedling',
+        'Reptile': 'fas fa-dragon',
+        'Insect': 'fas fa-bug',
+        'Other Invertebrate': 'fas fa-spider'
+    };
+    return icons[groupName] || 'fas fa-question-circle';
+}
+
+// Export functions for global access
+window.toggleLegend = toggleLegend;
+window.filterByRegion = filterByRegion;
+window.filterByType = filterByType;
+window.zoomToSite = zoomToSite;
+window.selectSearchResult = selectSearchResult;
+window.selectAdvancedSearchResult = selectAdvancedSearchResult;
+window.clearMeasurement = clearMeasurement;
+window.overlayLayers = overlayLayers;
 

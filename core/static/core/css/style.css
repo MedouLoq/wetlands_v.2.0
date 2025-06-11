@@ -795,8 +795,7 @@ a:hover {
 }
 
 .stats-section {
-    background: linear-gradient(rgba(248, 249, 250, 0.95), rgba(248, 249, 250, 0.9)), 
-                url('../images/stats-bg.jpg') center/cover no-repeat;
+    background: linear-gradient(rgb(79 188 133 / 95%), rgb(142 183 157 / 90%)), url(../images/stats-bg.jpg) center / cover no-repeat;
     padding: 80px 0;
     position: relative;
 }

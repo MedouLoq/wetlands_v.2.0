@@ -326,3 +326,18 @@ class SiteConservationMeasure(models.Model):
         unique_together = (("site", "measure"),)
         verbose_name = "Site Conservation Measure"
         verbose_name_plural = "Site Conservation Measures"
+
+
+# 18. Wilaya Model
+class Wilaya(gis_models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    geometry = gis_models.MultiPolygonField(srid=4326)
+
+    class Meta:
+        verbose_name = "Wilaya"
+        verbose_name_plural = "Wilayas"
+
+    def __str__(self):
+        return self.name
+
+

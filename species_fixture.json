@@ -1,0 +1,5186 @@
+[
+    {
+        "model": "core.species",
+        "pk": 1,
+        "fields": {
+            "scientific_name": "Telbe",
+            "common_name_fr": "Nénuphar Nymphaea lotus et Cyperus",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 2,
+        "fields": {
+            "scientific_name": "souvent des oiseaux bagués",
+            "common_name_fr": "Canard – Héron garde boeuf – Reukh Ciconia ciconia",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 3,
+        "fields": {
+            "scientific_name": "en voie de disparition à cause des nemadis qui chassent ces derniers",
+            "common_name_fr": "Phacochères",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 4,
+        "fields": {
+            "scientific_name": "Erythrocebus patas",
+            "common_name_fr": "le singe rouge et vervet (Cercopithecus aethiops) en voie de disparition",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 5,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "python sebae",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 6,
+        "fields": {
+            "scientific_name": "Canis aureus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 7,
+        "fields": {
+            "scientific_name": "Hyaena hyaena",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 8,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "fennec Vulpes zerda",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 9,
+        "fields": {
+            "scientific_name": "Vulpes pa",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 10,
+        "fields": {
+            "scientific_name": "Les principales",
+            "common_name_fr": "espèces poissons sont Clarias anguillaris et Lates niloticus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 11,
+        "fields": {
+            "scientific_name": "AN++++",
+            "common_name_fr": "Acacia nilotica",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 12,
+        "fields": {
+            "scientific_name": "ZM+++",
+            "common_name_fr": "Ziziphus mauritiana Combretum glutinosum (CG)",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 13,
+        "fields": {
+            "scientific_name": "SB-",
+            "common_name_fr": "Sclerocarya birrea",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 14,
+        "fields": {
+            "scientific_name": "BA++",
+            "common_name_fr": "Balanites Aegyptiaca",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 15,
+        "fields": {
+            "scientific_name": "AS",
+            "common_name_fr": "Acacia Senegal",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 16,
+        "fields": {
+            "scientific_name": "PR-+",
+            "common_name_fr": "Piliostigma reticulatum",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 17,
+        "fields": {
+            "scientific_name": "LP",
+            "common_name_fr": "Leptadenia pyrotechnica",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 18,
+        "fields": {
+            "scientific_name": "Lawsonia inermis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 19,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "cyperus",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 20,
+        "fields": {
+            "scientific_name": "Telbe",
+            "common_name_fr": "Nénuphar Nymphaea lotus",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 21,
+        "fields": {
+            "scientific_name": "Tilapia",
+            "common_name_fr": "de petites tailles soit Oreochromis niloticus et Clarias anguillaris.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 22,
+        "fields": {
+            "scientific_name": "HT++++",
+            "common_name_fr": "Hyphaene tebeica",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 23,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "BALANITES AEGYPTIACA",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 24,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "ZIZIPHUS MAURITIANA",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 25,
+        "fields": {
+            "scientific_name": "Ipomoea aquatica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 26,
+        "fields": {
+            "scientific_name": "Tribulus terrestris",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 27,
+        "fields": {
+            "scientific_name": "Tephrosia purpurea",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 28,
+        "fields": {
+            "scientific_name": "Panicum laetum",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 29,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Canard",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 30,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Hérons en période hivernale",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 31,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Chacal",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 32,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Hyénes quelques observation",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 33,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Phaccochéres disparus depuis 1989",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 34,
+        "fields": {
+            "scientific_name": "Mellivora capensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 35,
+        "fields": {
+            "scientific_name": "Erythrocebus patas",
+            "common_name_fr": "le singe rouge et vervet (Cercopithecus aethiops)",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 36,
+        "fields": {
+            "scientific_name": "Porc et",
+            "common_name_fr": "pic",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 37,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Herisson",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 38,
+        "fields": {
+            "scientific_name": "Croccodile disparu",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 39,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Python.",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 40,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Type Clarias anguillaris.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 41,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "PILIOSTIGMA RETICULATUM",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 42,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "ACACIA NILOTICA",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 43,
+        "fields": {
+            "scientific_name": "MI",
+            "common_name_fr": "Mitragina inermis",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 44,
+        "fields": {
+            "scientific_name": "AD",
+            "common_name_fr": "Adansonia digitata",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 45,
+        "fields": {
+            "scientific_name": "BR",
+            "common_name_fr": "Bauhinia rufescence",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 46,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Présence de graminées plus particulièrement le riz sauvage qui s'y trouve en abondance",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 47,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cypérus",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 48,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Nénuphar",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 49,
+        "fields": {
+            "scientific_name": "Turdoides fulva",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 50,
+        "fields": {
+            "scientific_name": "Alopochen aegyptiaca",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 51,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Oei-armée de Gambie Plectropterus gambensis",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 52,
+        "fields": {
+            "scientific_name": "Sylvia cantillans",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 53,
+        "fields": {
+            "scientific_name": "Pycnonotus barbatus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 54,
+        "fields": {
+            "scientific_name": "Oenanthe hispanica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 55,
+        "fields": {
+            "scientific_name": "Oenanthe leucopyga",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 56,
+        "fields": {
+            "scientific_name": "Vanullus spinosus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 57,
+        "fields": {
+            "scientific_name": "Circaetus gallicus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 58,
+        "fields": {
+            "scientific_name": "Corvus albus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 59,
+        "fields": {
+            "scientific_name": "Egretta intermedia",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 60,
+        "fields": {
+            "scientific_name": "Egretta garzetta",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 61,
+        "fields": {
+            "scientific_name": "Erythrocebus patas",
+            "common_name_fr": "Le singe rouge et vervet (Cercopithecus aethiops)",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 62,
+        "fields": {
+            "scientific_name": "Paraechinus aethiopicus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 63,
+        "fields": {
+            "scientific_name": "Hystrix cristata",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 64,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "il y'a principalement le Oreochromis niloticus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 65,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Coptodon zillii/Tilapia Zillii",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 66,
+        "fields": {
+            "scientific_name": "Sarotherodon galilaeus",
+            "common_name_fr": "Clarias gariepinus et le Clarias anguillaris.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 67,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia Nilotica",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 68,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Balanites Aegyptiaca",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 69,
+        "fields": {
+            "scientific_name": "ASY++",
+            "common_name_fr": "Acacia Seyal",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 70,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Mitragyna Inermis+-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 71,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Ziziphus Mauritiana",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 72,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Piliostigma Reticulatum",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 73,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Bauhinia Rufescence",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 74,
+        "fields": {
+            "scientific_name": "GB",
+            "common_name_fr": "Grewia Bicolor",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 75,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Combretum Glutinosum",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 76,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Adansonia Digitata",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 77,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia Senegal",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 78,
+        "fields": {
+            "scientific_name": "lalo",
+            "common_name_fr": "Corchorus tridens",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 79,
+        "fields": {
+            "scientific_name": "Mimosa pigra",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 80,
+        "fields": {
+            "scientific_name": "Canis aureus",
+            "common_name_fr": "Chacal peu nombreux",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 81,
+        "fields": {
+            "scientific_name": "Varan du",
+            "common_name_fr": "Nil Varanus niloticus",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 82,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Python sebae.",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 83,
+        "fields": {
+            "scientific_name": "Bagrus bayad",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 84,
+        "fields": {
+            "scientific_name": "Capitaine",
+            "common_name_fr": "Lates niloticus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 85,
+        "fields": {
+            "scientific_name": "Tilapia",
+            "common_name_fr": "Oreochromis niloticus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 86,
+        "fields": {
+            "scientific_name": "Douddou",
+            "common_name_fr": "Tetraodon lineatus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 87,
+        "fields": {
+            "scientific_name": "Honandou",
+            "common_name_fr": "Synodontis schall Marcusenius sanagaensis (Parou mepel).",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 88,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia Seyal",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 89,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Mitragyna Inermis",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 90,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Ziziphus Mauritiana En Périphérie",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 91,
+        "fields": {
+            "scientific_name": "Fa+++",
+            "common_name_fr": "Faidherbia Albida A L'ouest",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 92,
+        "fields": {
+            "scientific_name": "Absence de",
+            "common_name_fr": "plantes aquatiques au niveau de la zone humide de Warle",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 93,
+        "fields": {
+            "scientific_name": "Canis aureus",
+            "common_name_fr": "Chacal en grand nombre",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 94,
+        "fields": {
+            "scientific_name": "chat sauvage",
+            "common_name_fr": "Felis margarita",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 95,
+        "fields": {
+            "scientific_name": "Ratel",
+            "common_name_fr": "Mellivora capensis",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 96,
+        "fields": {
+            "scientific_name": "Ecureuil fouisseur",
+            "common_name_fr": "Euxerus erythropus",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 97,
+        "fields": {
+            "scientific_name": "Paraechinus aethiopicus",
+            "common_name_fr": "(Hérisson de dés",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 98,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Les espéces de poissons sont Oreochromis niloticus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 99,
+        "fields": {
+            "scientific_name": "Sarotherodon galilaeus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 100,
+        "fields": {
+            "scientific_name": "Clarias gariepinus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 101,
+        "fields": {
+            "scientific_name": "Clarias anguillaris",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 102,
+        "fields": {
+            "scientific_name": "Labeo sanagaensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 103,
+        "fields": {
+            "scientific_name": "Labeobarbus bynni",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 104,
+        "fields": {
+            "scientific_name": "Hydrocynus vittatus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 105,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "hudrocynus forskalii",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 106,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Hydrocynus brevis.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 107,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia Albida",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 108,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia Seyal+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 109,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia Senegal+.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 110,
+        "fields": {
+            "scientific_name": "Absence de",
+            "common_name_fr": "plante aquatique",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 111,
+        "fields": {
+            "scientific_name": "Hystrix cristata",
+            "common_name_fr": "Felis margarita",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 112,
+        "fields": {
+            "scientific_name": "Genetta lenzg",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 113,
+        "fields": {
+            "scientific_name": "Euxerus erythropus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 114,
+        "fields": {
+            "scientific_name": "Lepus capensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 115,
+        "fields": {
+            "scientific_name": "Varanus griseus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 116,
+        "fields": {
+            "scientific_name": "Varanus niloticus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 117,
+        "fields": {
+            "scientific_name": "Cerastes cerastes",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 118,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cerastes Vipera.",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 119,
+        "fields": {
+            "scientific_name": "Ziziphus mauritiana",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 120,
+        "fields": {
+            "scientific_name": "Acacia nilotica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 121,
+        "fields": {
+            "scientific_name": "Acacia seyal",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 122,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia Alida+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 123,
+        "fields": {
+            "scientific_name": "Acacia raddiana",
+            "common_name_fr": "+-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 124,
+        "fields": {
+            "scientific_name": "Balanites aegyptiaca",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 125,
+        "fields": {
+            "scientific_name": "Guiera senegalensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 126,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Combretum glutinosum.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 127,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "qui se trouve dans les petites mares adjacentes à Mêye mais la grande mare n'a pas de Nénuphar à cause de sa profondeur. Il y'a une présence de Cassia tora",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 128,
+        "fields": {
+            "scientific_name": "Ciconia ciconia",
+            "common_name_fr": "Cigognes blanches",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 129,
+        "fields": {
+            "scientific_name": "Ciconia nigra",
+            "common_name_fr": "Cicognes noires",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 130,
+        "fields": {
+            "scientific_name": "Dencroygne veuf",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 131,
+        "fields": {
+            "scientific_name": "Anas querquedula",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 132,
+        "fields": {
+            "scientific_name": "Pelecanus rufescens",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 133,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Motacilla Flava iberiae",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 134,
+        "fields": {
+            "scientific_name": "Tokus nasutus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 135,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Pa",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 136,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Lièvre",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 137,
+        "fields": {
+            "scientific_name": "mouton sauvage",
+            "common_name_fr": "wilére disparue",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 138,
+        "fields": {
+            "scientific_name": "en voie de disparition",
+            "common_name_fr": "Phacochoerus aethiopicus",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 139,
+        "fields": {
+            "scientific_name": "en voie de disparition",
+            "common_name_fr": "Python sebea",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 140,
+        "fields": {
+            "scientific_name": "Crocodulys suchus",
+            "common_name_fr": "crocodile (Crocodulys suchus ) disparue",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 141,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Melliv",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 142,
+        "fields": {
+            "scientific_name": "Alestes baremoze",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 143,
+        "fields": {
+            "scientific_name": "Alestes dentex",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 144,
+        "fields": {
+            "scientific_name": "Hydrocynus brevis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 145,
+        "fields": {
+            "scientific_name": "Auchenoglanis biscutatus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 146,
+        "fields": {
+            "scientific_name": "Auchenoglanis occidentalis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 147,
+        "fields": {
+            "scientific_name": "Chrysichtys auratus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 148,
+        "fields": {
+            "scientific_name": "Chrysichtys nigrodigitatus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 149,
+        "fields": {
+            "scientific_name": "Oreochromis niloticus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 150,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia raddiana+-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 151,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia Albida+ qui sont menacés par les coupes de bois et l'émondage)",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 152,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Bauhinia rufescens+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 153,
+        "fields": {
+            "scientific_name": "Piliostigma reticulatum",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 154,
+        "fields": {
+            "scientific_name": "Erythrocebus patas",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 155,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "chacal",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 156,
+        "fields": {
+            "scientific_name": "Crocodulys suchus  par moment",
+            "common_name_fr": "crocodile",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 157,
+        "fields": {
+            "scientific_name": "Hippopotames les",
+            "common_name_fr": "périodes d'eau pleine laga",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 158,
+        "fields": {
+            "scientific_name": "Felis margarita",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 159,
+        "fields": {
+            "scientific_name": "Agama boueti",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 160,
+        "fields": {
+            "scientific_name": "Agama boulengeri",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 161,
+        "fields": {
+            "scientific_name": "Varanus niloticu",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 162,
+        "fields": {
+            "scientific_name": "Acacia sieberiana",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 163,
+        "fields": {
+            "scientific_name": "Maytenus senegalensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 164,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia senegal-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 165,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia seyal-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 166,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Combretum glutinosum-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 167,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cassia tora.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 168,
+        "fields": {
+            "scientific_name": "Cercopithecus aethiops",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 169,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Euxerus erythropus.",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 170,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia raddiana+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 171,
+        "fields": {
+            "scientific_name": "Bauhinia rufescens",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 172,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia Albida+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 173,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia sieberiana.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 174,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Typha",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 175,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Ipomea",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 176,
+        "fields": {
+            "scientific_name": "Melierax metabates",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 177,
+        "fields": {
+            "scientific_name": "Phylloscopus bonelli",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 178,
+        "fields": {
+            "scientific_name": "Passer luteus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 179,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "passer griseus",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 180,
+        "fields": {
+            "scientific_name": "Lagonosticta senegala",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 181,
+        "fields": {
+            "scientific_name": "Euodice cantans",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 182,
+        "fields": {
+            "scientific_name": "Cercotrichas podobe",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 183,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "turdoides fulva",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 184,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Sylvia",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 185,
+        "fields": {
+            "scientific_name": "Hippopotamus amphibius",
+            "common_name_fr": "Selon la population il y'a neuf Hippopotames",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 186,
+        "fields": {
+            "scientific_name": "Vulpes pallida",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 187,
+        "fields": {
+            "scientific_name": "Mellivora capens",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 188,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "hemichromis fasciatus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 189,
+        "fields": {
+            "scientific_name": "Citharinus citharus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 190,
+        "fields": {
+            "scientific_name": "Citharinus latus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 191,
+        "fields": {
+            "scientific_name": "Lates niloticus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 192,
+        "fields": {
+            "scientific_name": "Synodontis schall",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 193,
+        "fields": {
+            "scientific_name": "Synodontis ocellifer",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 194,
+        "fields": {
+            "scientific_name": "Synodontis bat",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 195,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Balanites",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 196,
+        "fields": {
+            "scientific_name": "Acacia raddiana",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 197,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Prosopis juliflora+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 198,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Eucalyptus camaldulensis-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 199,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Azadirachta indica-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 200,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Phoenix dactylifera-.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 201,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Nymphéa",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 202,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "cassia tora",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 203,
+        "fields": {
+            "scientific_name": "Hippopotamus amphibius",
+            "common_name_fr": "Selon la population il y'a quatre Hippopotames",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 204,
+        "fields": {
+            "scientific_name": "Mellivora cape",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 205,
+        "fields": {
+            "scientific_name": "Acacia senegal",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 206,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia Albida-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 207,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia ehrenbergiana-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 208,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Maytenus senegalensis-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 209,
+        "fields": {
+            "scientific_name": "Salvadora persica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 210,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Prosopis juliflora+.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 211,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "pas de plantes aquatiques",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 212,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "sauvages : Vanullus spinosus",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 213,
+        "fields": {
+            "scientific_name": "Burhinus senegalensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 214,
+        "fields": {
+            "scientific_name": "Phacochoerus aethiopicus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 215,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acanthodactylus Longipes",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 216,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cerastes Vipera",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 217,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Bi",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 218,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Bauhinia Rufescens",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 219,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia Abida",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 220,
+        "fields": {
+            "scientific_name": "Acacia ehrenbergiana",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 221,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Mitragyna inermis+-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 222,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Capparis decidua+-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 223,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Combretum glutinosum-.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 224,
+        "fields": {
+            "scientific_name": "Aeschynomezne elaphroxylon",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 225,
+        "fields": {
+            "scientific_name": "Cassia tora",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 226,
+        "fields": {
+            "scientific_name": "Nymphaea lotus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 227,
+        "fields": {
+            "scientific_name": "Ipomea aquatica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 228,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cressa cretica.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 229,
+        "fields": {
+            "scientific_name": "Lemprotomis chalybaeus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 230,
+        "fields": {
+            "scientific_name": "Oenanthe hispanic",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 231,
+        "fields": {
+            "scientific_name": "Testudo sulcata",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 232,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Ag",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 233,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "seulement Clarias gariepinus et Clarias anguillaris.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 234,
+        "fields": {
+            "scientific_name": "Capparis decidua",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 235,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia raddiana-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 236,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia ehrenbergiana-.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 237,
+        "fields": {
+            "scientific_name": "ciconai nigra",
+            "common_name_fr": "Cicognes noires (ciconai nigra )",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 238,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Bubulcus Ibis",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 239,
+        "fields": {
+            "scientific_name": "Tarentola ephippiata",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 240,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "disponibles au niveau du lac de Mâl sont le Clarias gariepinus et le Clarias anguillaris.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 241,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia nilotica+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 242,
+        "fields": {
+            "scientific_name": "Leptadenia pyrotechnica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 243,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Prosopis juliflora.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 244,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Glinus lotoïdes",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 245,
+        "fields": {
+            "scientific_name": "Eremopteryx nigriceps",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 246,
+        "fields": {
+            "scientific_name": "Lanius meridionalis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 247,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Emahariberiza Sahari",
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 248,
+        "fields": {
+            "scientific_name": "Phylloscopus bonell",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 249,
+        "fields": {
+            "scientific_name": "Procavia capensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 250,
+        "fields": {
+            "scientific_name": "Canis adustus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 251,
+        "fields": {
+            "scientific_name": "disparue",
+            "common_name_fr": "Hystrix cristata",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 252,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acantho",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 253,
+        "fields": {
+            "scientific_name": "Les poissons",
+            "common_name_fr": "sont de plus grandes tailles ici car l'eau est un peu saline. Il s'agit des espéces suivantes :",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 254,
+        "fields": {
+            "scientific_name": "Mormyrus hasselquistii",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 255,
+        "fields": {
+            "scientific_name": "Mormyrus rume",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 256,
+        "fields": {
+            "scientific_name": "Mormyrops anguilloides",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 257,
+        "fields": {
+            "scientific_name": "Raiamas senegalensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 258,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Heterotis niloticus.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 259,
+        "fields": {
+            "scientific_name": "au Sud",
+            "common_name_fr": "Acacia seyal",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 260,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Balanites aegyptiaca+.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 261,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Nymphea",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 262,
+        "fields": {
+            "scientific_name": "Coracias abyssinicus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 2,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 263,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Jaculus Jerbou",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 264,
+        "fields": {
+            "scientific_name": "Crocodulys suchus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 265,
+        "fields": {
+            "scientific_name": "Acanthodactylus dumerilli",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 266,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Taren",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 267,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "     il n'ya pas de poissons.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 268,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Balanites aegyptiaca+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 269,
+        "fields": {
+            "scientific_name": "Commiphora africana",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 270,
+        "fields": {
+            "scientific_name": "Euphorbia balsamifera",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 271,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia seyal.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 272,
+        "fields": {
+            "scientific_name": "Cressa cretica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 273,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Panicum laetum.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 274,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acanth",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 275,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "hydrocynus forskalii",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 276,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "brycinus macrolepidotus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 277,
+        "fields": {
+            "scientific_name": "Clarias gariepin",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 278,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Faidherbia albida-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 279,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cyperus",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 280,
+        "fields": {
+            "scientific_name": "Aeschynomene indica",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 281,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "cocculms pendilis",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 282,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Nymphea lotus.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 283,
+        "fields": {
+            "scientific_name": "Hemichromis fasciatus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 284,
+        "fields": {
+            "scientific_name": "Heterotis niloticus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 285,
+        "fields": {
+            "scientific_name": "Propterus annectens",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 286,
+        "fields": {
+            "scientific_name": "Ctenopama kingsleyae",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 287,
+        "fields": {
+            "scientific_name": "Pellonula leonensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 288,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Tetraodon lineatus.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 289,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Bauhinia rufescens-",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 290,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia seyal+",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 291,
+        "fields": {
+            "scientific_name": "Combretum aculeatum",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 292,
+        "fields": {
+            "scientific_name": "Cordia sinensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 293,
+        "fields": {
+            "scientific_name": "Combretum glutinosum",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 294,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Acacia senegal.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 295,
+        "fields": {
+            "scientific_name": "Riz sauvage",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 296,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Typha.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 297,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Jacu",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 298,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "brycinus leuciscus",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 299,
+        "fields": {
+            "scientific_name": "Synodontis batensoda",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 300,
+        "fields": {
+            "scientific_name": "Hyperopisus bebe",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 301,
+        "fields": {
+            "scientific_name": "Petrocephalus bovei",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 302,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Ctenopama kingsleyae.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 303,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Ziziphus mauritiana+.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 304,
+        "fields": {
+            "scientific_name": "Nynphea lotus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 305,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "tribulus terrestris",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 306,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Panicun laetum.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 307,
+        "fields": {
+            "scientific_name": "Marcusenius sanagaensis",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 308,
+        "fields": {
+            "scientific_name": "Distichodus engycep",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 309,
+        "fields": {
+            "scientific_name": "Faidherbia albida",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 310,
+        "fields": {
+            "scientific_name": "Corchorus tridens",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 311,
+        "fields": {
+            "scientific_name": "Sporobolus spicatus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 312,
+        "fields": {
+            "scientific_name": "Nymphea lotus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 313,
+        "fields": {
+            "scientific_name": "Abutilon pannosum",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 314,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Cucumis melo.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 315,
+        "fields": {
+            "scientific_name": "Hystrix cristata",
+            "common_name_fr": "(Disp",
+            "common_name_local": null,
+            "taxonomic_group": 3,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 316,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Propterus annectens.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 317,
+        "fields": {
+            "scientific_name": "Maerua crassifolia",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 318,
+        "fields": {
+            "scientific_name": "Cenchrus biflorus",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 319,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "typha",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 320,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Tephrosia purpurea.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 321,
+        "fields": {
+            "scientific_name": "Poisson une",
+            "common_name_fr": "seule espéce",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 322,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "seulement clarias angillaris.",
+            "common_name_local": null,
+            "taxonomic_group": 4,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 323,
+        "fields": {
+            "scientific_name": "Anogeissus leiocarpa",
+            "common_name_fr": null,
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    },
+    {
+        "model": "core.species",
+        "pk": 324,
+        "fields": {
+            "scientific_name": null,
+            "common_name_fr": "Mitragyna inermis.",
+            "common_name_local": null,
+            "taxonomic_group": 1,
+            "iucn_status": null,
+            "national_status": null,
+            "description": null,
+            "notes": null,
+            "created_at": "2025-06-04 14:29:44.827869+00:00",
+            "updated_at": "2025-06-04 14:29:44.828240+00:00"
+        }
+    }
+]
