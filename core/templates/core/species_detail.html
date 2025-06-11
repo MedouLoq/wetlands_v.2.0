@@ -302,7 +302,7 @@
 {% endblock %}
 
 {% block content %}
-<!-- Species Hero Section -->
+<!-- Section Héro de l'Espèce -->
 <section class="species-hero">
     <div class="container species-hero-content">
         <div class="row align-items-center">
@@ -350,7 +350,7 @@
     </div>
 </section>
 
-<!-- Image Gallery Section -->
+<!-- Section Galerie d'Images -->
 {% if species.images.exists %}
 <section class="container">
     <div class="image-gallery-container" data-aos="fade-up">
@@ -379,37 +379,37 @@
 </section>
 {% endif %}
 
-<!-- Species Information -->
+<!-- Informations sur l'Espèce -->
 <section class="container section-padding">
     <div class="row">
-        <!-- Main Content -->
+        <!-- Contenu Principal -->
         <div class="col-lg-8 mb-4 mb-lg-0">
-            <!-- Basic Information -->
+            <!-- Informations de Base -->
             <div class="species-info-card" data-aos="fade-up">
-                <h2 class="mb-4"><i class="fas fa-info-circle text-primary me-2"></i> Species Information</h2>
+                <h2 class="mb-4"><i class="fas fa-info-circle text-primary me-2"></i> Informations sur l'Espèce</h2>
                 <table class="table info-table">
                     <tbody>
                         {% if species.scientific_name %}
                             <tr>
-                                <th scope="row" style="width: 30%;">Scientific Name</th>
+                                <th scope="row" style="width: 30%;">Nom Scientifique</th>
                                 <td><em>{{ species.scientific_name }}</em></td>
                             </tr>
                         {% endif %}
                         {% if species.common_name_fr %}
                             <tr>
-                                <th scope="row">French Name</th>
+                                <th scope="row">Nom Français</th>
                                 <td>{{ species.common_name_fr }}</td>
                             </tr>
                         {% endif %}
                         {% if species.common_name_local %}
                             <tr>
-                                <th scope="row">Local Name</th>
+                                <th scope="row">Nom Local</th>
                                 <td>{{ species.common_name_local }}</td>
                             </tr>
                         {% endif %}
                         {% if species.taxonomic_group %}
                             <tr>
-                                <th scope="row">Taxonomic Group</th>
+                                <th scope="row">Groupe Taxonomique</th>
                                 <td>
                                     <span class="badge bg-primary">{{ species.taxonomic_group.name }}</span>
                                 </td>
@@ -417,7 +417,7 @@
                         {% endif %}
                         {% if species.national_status %}
                             <tr>
-                                <th scope="row">National Status</th>
+                                <th scope="row">Statut National</th>
                                 <td>{{ species.national_status }}</td>
                             </tr>
                         {% endif %}
@@ -433,7 +433,7 @@
                 
                 {% if species.notes %}
                     <div class="mt-4">
-                        <h5><i class="fas fa-sticky-note text-primary me-2"></i> Additional Notes</h5>
+                        <h5><i class="fas fa-sticky-note text-primary me-2"></i> Notes Additionnelles</h5>
                         <p class="text-muted">{{ species.notes }}</p>
                     </div>
                 {% endif %}
@@ -452,16 +452,16 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
                                             <small class="text-muted">
-                                                <i class="fas fa-map-marker-alt me-1"></i> {{ site.region|default:"Unknown Region" }}
+                                                <i class="fas fa-map-marker-alt me-1"></i> Région: {{ site.region|default:"Inconnue" }}
                                             </small>
                                             {% if site.is_ramsar_site %}
                                                 <div class="mt-1">
-                                                    <span class="badge bg-success">Ramsar Site</span>
+                                                    <span class="badge bg-success">Site Ramsar</span>
                                                 </div>
                                             {% endif %}
                                         </div>
                                         <a href="{% url 'wetland_site_detail' site.id %}" class="btn btn-sm btn-outline-primary">
-                                            <i class="fas fa-eye"></i>
+                                            <i class="fas fa-eye"></i> Voir
                                         </a>
                                     </div>
                                 </div>
@@ -471,7 +471,7 @@
                 {% else %}
                     <div class="text-center py-4">
                         <i class="fas fa-map-marked-alt fa-3x text-muted mb-3"></i>
-                        <p class="text-muted">No distribution data available for this species.</p>
+                        <p class="text-muted">Aucune donnée de distribution disponible pour cette espèce.</p>
                     </div>
                 {% endif %}
                 
@@ -479,33 +479,33 @@
             </div>
         </div>
         
-        <!-- Sidebar -->
+        <!-- Barre Latérale -->
         <div class="col-lg-4">
-            <!-- Conservation Status -->
+            <!-- Statut de Conservation -->
             {% if species.iucn_status %}
                 <div class="species-info-card" data-aos="fade-up">
-                    <h5 class="mb-3"><i class="fas fa-shield-alt text-primary me-2"></i> Conservation Status</h5>
+                    <h5 class="mb-3"><i class="fas fa-shield-alt text-primary me-2"></i> Statut de Conservation</h5>
                     
                     <div class="conservation-progress">
                         {% if species.iucn_status == 'LC' %}
                             <div class="conservation-level bg-success" style="width: 14.3%;">
-                                Least Concern
+                                Préoccupation Mineure
                             </div>
                         {% elif species.iucn_status == 'NT' %}
                             <div class="conservation-level bg-info" style="width: 28.6%;">
-                                Near Threatened
+                                Quasi Menacée
                             </div>
                         {% elif species.iucn_status == 'VU' %}
                             <div class="conservation-level bg-warning" style="width: 42.9%;">
-                                Vulnerable
+                                Vulnérable
                             </div>
                         {% elif species.iucn_status == 'EN' %}
                             <div class="conservation-level bg-danger" style="width: 57.2%;">
-                                Endangered
+                                En Danger
                             </div>
                         {% elif species.iucn_status == 'CR' %}
                             <div class="conservation-level bg-danger" style="width: 71.5%;">
-                                Critically Endangered
+                                En Danger Critique
                             </div>
                         {% else %}
                             <div class="conservation-level bg-secondary" style="width: 100%;">
@@ -515,17 +515,17 @@
                     </div>
                     
                     <small class="text-muted">
-                        IUCN Red List Category: 
+                        Catégorie Liste Rouge UICN: 
                         <strong>
-                            {% if species.iucn_status == 'LC' %}Least Concern
-                            {% elif species.iucn_status == 'NT' %}Near Threatened
-                            {% elif species.iucn_status == 'VU' %}Vulnerable
-                            {% elif species.iucn_status == 'EN' %}Endangered
-                            {% elif species.iucn_status == 'CR' %}Critically Endangered
-                            {% elif species.iucn_status == 'EW' %}Extinct in the Wild
-                            {% elif species.iucn_status == 'EX' %}Extinct
-                            {% elif species.iucn_status == 'DD' %}Data Deficient
-                            {% elif species.iucn_status == 'NE' %}Not Evaluated
+                            {% if species.iucn_status == 'LC' %}Préoccupation Mineure
+                            {% elif species.iucn_status == 'NT' %}Quasi Menacée
+                            {% elif species.iucn_status == 'VU' %}Vulnérable
+                            {% elif species.iucn_status == 'EN' %}En Danger
+                            {% elif species.iucn_status == 'CR' %}En Danger Critique
+                            {% elif species.iucn_status == 'EW' %}Éteinte à l'état sauvage
+                            {% elif species.iucn_status == 'EX' %}Éteinte
+                            {% elif species.iucn_status == 'DD' %}Données Insuffisantes
+                            {% elif species.iucn_status == 'NE' %}Non Évaluée
                             {% else %}{{ species.iucn_status }}
                             {% endif %}
                         </strong>
@@ -533,14 +533,14 @@
                 </div>
             {% endif %}
             
-            <!-- Quick Stats -->
+            <!-- Statistiques Rapides -->
             <div class="species-info-card" data-aos="fade-up" data-aos-delay="200">
-                <h5 class="mb-3"><i class="fas fa-chart-bar text-primary me-2"></i> Quick Stats</h5>
+                <h5 class="mb-3"><i class="fas fa-chart-bar text-primary me-2"></i> Statistiques Rapides</h5>
                 
                 <div class="d-flex justify-content-between align-items-center mb-3 p-3 bg-light rounded">
                     <div>
                         <i class="fas fa-map-marker-alt text-primary me-2"></i>
-                        <strong>Distribution Sites</strong>
+                        <strong>Sites de Distribution</strong>
                     </div>
                     <span class="badge bg-primary">{{ sites.count }}</span>
                 </div>
@@ -548,7 +548,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-3 p-3 bg-light rounded">
                     <div>
                         <i class="fas fa-images text-primary me-2"></i>
-                        <strong>Available Images</strong>
+                        <strong>Images Disponibles</strong>
                     </div>
                     <span class="badge bg-primary">{{ species.images.count }}</span>
                 </div>
@@ -556,7 +556,7 @@
                 <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded">
                     <div>
                         <i class="fas fa-calendar text-primary me-2"></i>
-                        <strong>Last Updated</strong>
+                        <strong>Dernière Mise à Jour</strong>
                     </div>
                     <small class="text-muted">{{ species.updated_at|date:"M d, Y" }}</small>
                 </div>
@@ -568,13 +568,13 @@
                 
                 <div class="d-grid gap-2">
                     <button class="btn btn-gradient" onclick="window.print()">
-                        <i class="fas fa-print me-2"></i> Print Species Info
+                        <i class="fas fa-print me-2"></i> Imprimer les Infos de l'Espèce
                     </button>
                     <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#shareModal">
-                        <i class="fas fa-share-alt me-2"></i> Share Species
+                        <i class="fas fa-share-alt me-2"></i> Partager l'Espèce
                     </button>
                     <a href="{% url 'species_list' %}" class="btn btn-outline-secondary">
-                        <i class="fas fa-arrow-left me-2"></i> Back to Species List
+                        <i class="fas fa-arrow-left me-2"></i> Retour à la Liste des Espèces
                     </a>
                 </div>
             </div>
@@ -582,14 +582,14 @@
     </div>
 </section>
 
-<!-- Floating Action Button -->
+<!-- Bouton d'Action Flottant -->
 <div class="floating-action">
-    <button class="floating-btn" data-bs-toggle="tooltip" data-bs-placement="left" title="Add Observation">
+    <button class="floating-btn" data-bs-toggle="tooltip" data-bs-placement="left" title="Ajouter une Observation">
         <i class="fas fa-plus"></i>
     </button>
 </div>
 
-<!-- Image Modal -->
+<!-- Modale d'Image -->
 <div class="modal fade image-modal" id="imageModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -601,20 +601,20 @@
     </div>
 </div>
 
-<!-- Share Modal -->
+<!-- Modale de Partage -->
 <div class="modal fade" id="shareModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Share Species</h5>
+                <h5 class="modal-title">Partager l'Espèce</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-                <p>Share this species information:</p>
+                <p>Partager les informations de cette espèce:</p>
                 <div class="input-group">
                     <input type="text" class="form-control" value="{{ request.build_absolute_uri }}" readonly id="shareUrl">
                     <button class="btn btn-primary" onclick="copyToClipboard()">
-                        <i class="fas fa-copy"></i> Copy
+                        <i class="fas fa-copy"></i> Copier
                     </button>
                 </div>
             </div>
@@ -631,7 +631,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
 
 <script>
-    // Image gallery functionality
+    // Fonctionnalité de la galerie d'images
     document.addEventListener('DOMContentLoaded', function() {
         const thumbnails = document.querySelectorAll('.thumbnail');
         const mainImage = document.getElementById('mainImage');
@@ -639,24 +639,24 @@
         
         thumbnails.forEach((thumbnail, index) => {
             thumbnail.addEventListener('click', function() {
-                // Remove active class from all thumbnails
+                // Supprimer la classe active de toutes les miniatures
                 thumbnails.forEach(t => t.classList.remove('active'));
                 
-                // Add active class to clicked thumbnail
+                // Ajouter la classe active à la miniature cliquée
                 this.classList.add('active');
                 
-                // Update main image
+                // Mettre à jour l'image principale
                 const newImageSrc = this.dataset.image;
                 mainImage.src = newImageSrc;
                 
-                // Update counter
+                // Mettre à jour le compteur
                 if (currentImageIndex) {
                     currentImageIndex.textContent = this.dataset.index;
                 }
             });
         });
         
-        // Click to zoom functionality
+        // Fonctionnalité de clic pour zoomer
         if (mainImage) {
             mainImage.addEventListener('click', function() {
                 document.getElementById('modalImage').src = this.src;
@@ -664,22 +664,22 @@
             });
         }
         
-        // Initialize tooltips
+        // Initialiser les info-bulles
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
 
-        // Leaflet Map Initialization
+        // Initialisation de la carte Leaflet
         const mapElement = document.getElementById('distribution-map');
         if (mapElement) {
             const sitesGeoJSON = JSON.parse('{{ sites_geojson|escapejs }}');
             
             if (sitesGeoJSON.length > 0) {
-                const map = L.map('distribution-map').setView([0, 0], 2); // Default view
+                const map = L.map('distribution-map').setView([0, 0], 2); // Vue par défaut
 
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributeurs'
                 }).addTo(map);
 
                 const markers = L.markerClusterGroup();
@@ -689,37 +689,37 @@
                         const lat = site.geometry.coordinates[1];
                         const lng = site.geometry.coordinates[0];
                         const marker = L.marker([lat, lng]);
-                        marker.bindPopup(`<b>${site.properties.name}</b><br>Region: ${site.properties.region}<br><a href="/wetland_sites/${site.properties.id}">View Details</a>`);
+                        marker.bindPopup(`<b>${site.properties.name}</b><br>Région: ${site.properties.region}<br><a href="/wetland_sites/${site.properties.id}">Voir les Détails</a>`);
                         markers.addLayer(marker);
                     }
                 });
 
                 map.addLayer(markers);
 
-                // Fit map to bounds of markers
+                // Ajuster la carte aux limites des marqueurs
                 if (markers.getLayers().length > 0) {
                     map.fitBounds(markers.getBounds());
                 } else {
-                    // Default view if no valid geometries
-                    map.setView([20.5, -10.5], 6); // Mauritania center
+                    // Vue par défaut si aucune géométrie valide
+                    map.setView([20.5, -10.5], 6); // Centre de la Mauritanie
                 }
             } else {
-                mapElement.innerHTML = '<div class="text-center py-4"><i class="fas fa-map-marked-alt fa-3x text-muted mb-3"></i><p class="text-muted">No distribution data available for this species.</p></div>';
+                mapElement.innerHTML = '<div class="text-center py-4"><i class="fas fa-map-marked-alt fa-3x text-muted mb-3"></i><p class="text-muted">Aucune donnée de distribution disponible pour cette espèce.</p></div>';
             }
         }
     });
     
-    // Copy to clipboard function
+    // Fonction de copie dans le presse-papiers
     function copyToClipboard() {
         const shareUrl = document.getElementById('shareUrl');
         shareUrl.select();
         shareUrl.setSelectionRange(0, 99999);
         document.execCommand('copy');
         
-        // Show feedback
+        // Afficher le feedback
         const copyBtn = event.target.closest('button');
         const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        copyBtn.innerHTML = '<i class="fas fa-check"></i> Copié!';
         copyBtn.classList.add('btn-success');
         copyBtn.classList.remove('btn-primary');
         
@@ -730,7 +730,7 @@
         }, 2000);
     }
     
-    // Keyboard navigation for image gallery
+    // Navigation au clavier pour la galerie d'images
     document.addEventListener('keydown', function(e) {
         const thumbnails = document.querySelectorAll('.thumbnail');
         const activeThumbnail = document.querySelector('.thumbnail.active');
